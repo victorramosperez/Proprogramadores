@@ -10,3 +10,10 @@ Enemigo::~Enemigo()
 {
 
 }
+
+void Enemigo::dibuja()
+{
+	glTranslatef(posicion.x, posicion.y, 0);
+	glutSolidCube(5);
+	glTranslatef(-posicion.x, -posicion.y, 0);
+}
