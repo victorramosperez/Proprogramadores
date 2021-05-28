@@ -28,6 +28,12 @@ bool ListaEnemigos::agregar(Enemigo* e)
 	return true;
 }
 
+void ListaEnemigos::mueve(float t)
+{
+	for (int i = 0; i < numero; i++)
+		lista[i]->mueve(t);
+}
+
 void ListaEnemigos::dibuja()
 {
 	for (int i = 0; i < numero; i++)
