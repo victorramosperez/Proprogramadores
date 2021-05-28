@@ -8,7 +8,7 @@ ListaEnemigos::ListaEnemigos()
 		lista[i] = 0;
 }
 
-ListaEsferas::~ListaEsferas()
+ListaEnemigos::~ListaEnemigos()
 {
 	destruirContenido();
 }
