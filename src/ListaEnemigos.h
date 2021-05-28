@@ -12,7 +12,7 @@ public:
 	void mueve(float t);
 	void destruirContenido();
 	void eliminar(int index);
-	void eliminar(Esfera* e);
+	void eliminar(Enemigo* e);
 	
 	int getNumero() { return numero; }
 private:
