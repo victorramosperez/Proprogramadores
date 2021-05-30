@@ -13,7 +13,11 @@ Enemigo::~Enemigo()
 
 void Enemigo::dibuja()
 {
-	glTranslatef(posicion.x, posicion.y, 0);
-	glutSolidCube(5);
-	glTranslatef(-posicion.x, -posicion.y, 0);
+	glColor3ub(255,255,255);
+	glBegin(GL_POLYGON);
+		glVertex3f();
+		glVertex3f();
+		glVertex3f();
+		glVertex3f();
+	glEnd();
 }
