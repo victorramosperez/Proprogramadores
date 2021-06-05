@@ -17,16 +17,6 @@ void Mundo::dibuja()
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
-	glBegin(GL_POLYGON);
-	glColor3ub(255, 0, 0);
-	glVertex3f(-0.6f, -0.6f, 0.0f);
-	glColor3ub(255, 255, 0);
-	glVertex3f(-0.6f, 0.6f, 0.0f);
-	glColor3ub(255, 255, 255);
-	glVertex3f(0.6f, 0.6f, 0.0f);
-	glColor3ub(0, 255, 255);
-	glVertex3f(0.6f, -0.6f, 0.0f);
-	glEnd();
 }
 
 bool Mundo::cargarNivel()
@@ -65,7 +55,8 @@ bool Mundo::cargarNivel()
 
 void Mundo::setNivel(int n)
 {
-	nivel = n;
+	//
+nivel = n;
 }
 
 void Mundo::mueve()
@@ -87,9 +78,20 @@ Mundo::~Mundo()
 
 void Mundo::tecla(unsigned char key)
 {
-
+	switch (key)
+	{
+	case '2':
+		nivel = 2;
+		cargarNivel();
+		break;
+	case '3':
+		nivel = 3;
+		cargarNivel();
+		break;
+	}
 }
 
 void Mundo::teclaEspecial(unsigned char key)
 {
+
 }

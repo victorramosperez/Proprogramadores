@@ -7,7 +7,7 @@ private:
 	float y_ojo;
 	float z_ojo;
 	bool impacto;
-	int nivel;
+	
 public: 
 	~Mundo();
 	void tecla(unsigned char key);
@@ -19,4 +19,5 @@ public:
 	bool cargarNivel();
 	void setNivel(int);
 	Pared suelo;
+	int nivel;
 };

@@ -26,6 +26,21 @@ void Coordinador::tecla(unsigned char key)
 			mundo.inicializa();
 			estado = JUEGO;
 		}
+
+		if (key == '2')
+		{
+			mundo.nivel = 2;
+			mundo.inicializa();
+			estado = JUEGO;
+		}
+
+		if (key == '3')
+		{
+			mundo.nivel = 3;
+			mundo.inicializa();
+			estado = JUEGO;
+		}
+
 		if (key == 's')
 			exit(0);
 	}
@@ -34,6 +49,7 @@ void Coordinador::tecla(unsigned char key)
 		mundo.tecla(key);
 		if (key == 'p')
 			estado = PAUSA;
+		
 	}
 	else if (estado == PAUSA)
 	{
