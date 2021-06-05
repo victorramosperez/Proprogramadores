@@ -15,4 +15,6 @@ public:
 	void rotarOjo();
 	void mueve();
 	void dibuja();
+	bool cargarNivel();
+	void setNivel(int);
 };

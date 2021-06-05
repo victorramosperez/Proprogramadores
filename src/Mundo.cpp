@@ -20,6 +20,35 @@ void Mundo::dibuja()
 	
 }
 
+bool Mundo::cargarNivel()
+{
+	nivel++;
+	//Resetear la posicion, velocidad, destruir contenido
+	
+	if (nivel == 1)
+	{
+		//Crear mapa, enemigos
+	
+	}
+	if (nivel == 2)
+	{
+		//Crear mapa, enemigos
+		
+	}
+	if (nivel == 3)
+	{
+		//Crear mapa, enemigos
+	}
+	if (nivel <= 3)
+		return true;
+	return false;
+}
+
+void Mundo::setNivel(int n)
+{
+	nivel = n;
+}
+
 void Mundo::mueve()
 {
 
