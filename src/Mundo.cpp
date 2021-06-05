@@ -17,6 +17,8 @@ void Mundo::dibuja()
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
+	
+
 }
 
 bool Mundo::cargarNivel()
@@ -28,20 +30,22 @@ bool Mundo::cargarNivel()
 	{
 		//Crear mapa, enemigos
 		//aqui es donde hay que poner el codigo de dibujo
+		//NO CONSIGUE ENTRAR AL NVL 1
 		glBegin(GL_POLYGON);
 		glColor3ub(0, 255, 0);
-		glVertex3f(-10.6f, 0.0f, -10.0f);
+		glVertex3f(-10.6f, 0.0f, 0.0f);
 		glColor3ub(0, 255, 0);
-		glVertex3f(-10.6f, 10.6f, -10.0f);
+		glVertex3f(-10.6f, 10.6f, 0.0f);
 		glColor3ub(0, 255, 0);
-		glVertex3f(10.6f, 10.6f, -10.0f);
+		glVertex3f(10.6f, 10.6f, 0.0f);
 		glColor3ub(0, 255, 0);
-		glVertex3f(10.6f, 0.f, -10.0f);
+		glVertex3f(10.6f, 0.f, 0.0f);
 		glEnd();
 	}
 	if (nivel == 2)
 	{
 		//Crear mapa, enemigos
+		suelo21.setPos(0, 0, 36.5, 0);
 		suelo21.dibuja();
 	}
 	if (nivel == 3)
@@ -78,17 +82,7 @@ Mundo::~Mundo()
 
 void Mundo::tecla(unsigned char key)
 {
-	switch (key)
-	{
-	case '2':
-		nivel = 2;
-		cargarNivel();
-		break;
-	case '3':
-		nivel = 3;
-		cargarNivel();
-		break;
-	}
+	
 }
 
 void Mundo::teclaEspecial(unsigned char key)

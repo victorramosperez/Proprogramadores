@@ -9,9 +9,11 @@ Pared::Pared()
 	limite2.x = 0;
 	limite2.y = 0;
 }
+
 Pared::~Pared()
 {
 }
+
 void Pared::setColor(Byte r, Byte g, Byte b)
 {
 	color.r = r;
