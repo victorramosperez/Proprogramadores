@@ -18,6 +18,7 @@ public:
 	void dibuja();
 	void mueve(float t);
 	void setVel(float vx, float vy);
+	void setPos(float posx, float posy);
 	Dimensiones getDim();
 	Vector2D getPos();
 

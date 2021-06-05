@@ -33,6 +33,12 @@ void Obstaculo::setVel(float vx, float vy)
 	velocidad.y = vy;
 }
 
+void Obstaculo::setPos(float posx, float posy)
+{
+	posicion.x = posx;
+	posicion.y = posy;
+}
+
 Dimensiones Obstaculo::getDim()
 {
 	return dim;
