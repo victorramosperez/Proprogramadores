@@ -34,6 +34,7 @@
     <ClCompile Include="src\ObstaculoSimple.cpp" />
     <ClCompile Include="src\ObstaculoTiempo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
+    <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,7 @@
     <ClInclude Include="src\ObstaculoAbsoluto.h" />
     <ClInclude Include="src\ObstaculoSimple.h" />
     <ClInclude Include="src\ObstaculoTiempo.h" />
+    <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -17,7 +17,16 @@ void Mundo::dibuja()
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
-	
+	glBegin(GL_POLYGON);
+	glColor3ub(255, 0, 0);
+	glVertex3f(-0.6f, -0.6f, 0.0f);
+	glColor3ub(255, 255, 0);
+	glVertex3f(-0.6f, 0.6f, 0.0f);
+	glColor3ub(255, 255, 255);
+	glVertex3f(0.6f, 0.6f, 0.0f);
+	glColor3ub(0, 255, 255);
+	glVertex3f(0.6f, -0.6f, 0.0f);
+	glEnd();
 }
 
 bool Mundo::cargarNivel()
@@ -28,7 +37,17 @@ bool Mundo::cargarNivel()
 	if (nivel == 1)
 	{
 		//Crear mapa, enemigos
-	
+		//aqui es donde hay que poner el codigo de dibujo
+		glBegin(GL_POLYGON);
+		glColor3ub(0, 255, 0);
+		glVertex3f(-10.6f, 0.0f, -10.0f);
+		glColor3ub(0, 255, 0);
+		glVertex3f(-10.6f, 10.6f, -10.0f);
+		glColor3ub(0, 255, 0);
+		glVertex3f(10.6f, 10.6f, -10.0f);
+		glColor3ub(0, 255, 0);
+		glVertex3f(10.6f, 0.f, -10.0f);
+		glEnd();
 	}
 	if (nivel == 2)
 	{
