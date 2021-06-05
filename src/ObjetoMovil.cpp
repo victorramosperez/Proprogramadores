@@ -28,3 +28,13 @@ Vector2D ObjetoMovil::getPos()
 {
 	return posicion;
 }
+
+Dimensiones ObjetoMovil::getDim()
+{
+	return dim;
+}
+
+void ObjetoMovil::setDim(Dimensiones d)
+{
+	dim = d;
+}

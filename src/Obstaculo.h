@@ -2,9 +2,11 @@
 #include "Dimensiones.h"
 class Obstaculo
 {
+private:
+	Dimensiones dim;
 public:
 	Obstaculo();
 	~Obstaculo();
-	Dimensiones dim;
+	Dimensiones getDim();
 };
 

@@ -1,10 +1,10 @@
 #pragma once
 #include "Dimensiones.h"
-class Hombre
+#include "ObjetoMovil.h"
+class Hombre:public ObjetoMovil
 {
 public:
 	Hombre();
 	~Hombre();
-	Dimensiones dim;
 };
 
