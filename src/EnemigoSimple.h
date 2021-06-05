@@ -1,11 +1,10 @@
 #pragma once
 #include "Enemigo.h"
-
-class EnemigoSimple:public Enemigo
+class EnemigoSimple :
+    public Enemigo
 {
-private:
-
 public:
-	EnemigoSimple();
-	void mueve(float t);
+    EnemigoSimple();
+    ~EnemigoSimple();
 };
+
