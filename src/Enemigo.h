@@ -16,3 +16,11 @@ public:
     void setDireccion(int ndir) { Direccion = ndir; }
     int getDireccion() { return Direccion; }
 };
+
+
+class EnemigoSimple : public Enemigo { 
+public:
+	EnemigoSimple(Vector2D posicion);
+protected:
+	//sprite
+};
