@@ -21,8 +21,8 @@
   <ItemGroup>
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
+    <ClCompile Include="src\Dimensiones.cpp" />
     <ClCompile Include="src\Enemigo.cpp" />
-    <ClCompile Include="src\EnemigoSimple.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaEnemigos.cpp" />
@@ -35,8 +35,8 @@
   <ItemGroup>
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Coordinador.h" />
+    <ClInclude Include="src\Dimensiones.h" />
     <ClInclude Include="src\Enemigo.h" />
-    <ClInclude Include="src\EnemigoSimple.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaEnemigos.h" />
