@@ -56,6 +56,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
+	setNivel(0);
 	x_ojo=0;
 	y_ojo=10;
 	z_ojo=20;

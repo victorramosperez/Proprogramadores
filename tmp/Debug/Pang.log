@@ -1,2 +1,14 @@
-﻿  Pang.cpp
-  Pang.vcxproj -> C:\Users\victo\source\repos\Trabajo_final\Trabajo_final\Trabajo_final\bin\Pang.exe
+﻿  Coordinador.cpp
+  Enemigo.cpp
+  EnemigoSimple.cpp
+  ListaEnemigos.cpp
+  Mundo.cpp
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(7,12): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(8,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(10,12): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(11,12): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  ObjetoMovil.cpp
+  Pang.cpp
+  Vector2D.cpp
+  Generando código...
+  Pang.vcxproj -> C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\bin\Pang.exe
