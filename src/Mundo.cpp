@@ -42,7 +42,7 @@ bool Mundo::cargarNivel()
 	if (nivel == 2)
 	{
 		//Crear mapa, enemigos
-		
+		suelo21.dibuja();
 	}
 	if (nivel == 3)
 	{

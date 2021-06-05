@@ -4,6 +4,10 @@ Pared::Pared()
 {
 	color.r = color.b = 0;
 	color.g = 255;
+	limite1.x = 0;
+	limite1.y = 0;
+	limite2.x = 0;
+	limite2.y = 0;
 }
 Pared::~Pared()
 {
@@ -27,9 +31,9 @@ void Pared::dibuja()
 	glColor3ub(color.r, color.g, color.b);
 	glBegin(GL_POLYGON);
 	glVertex3d(limite1.x, limite1.y, 10);
+	glVertex3d(limite1.x, limite2.y, 10);
+	glVertex3d(limite2.x, limite1.y, 10);
 	glVertex3d(limite2.x, limite2.y, 10);
-	glVertex3d(limite2.x, limite2.y, -10);
-	glVertex3d(limite1.x, limite1.y, -10);
 	glEnd();
 	glEnable(GL_LIGHTING);
 }
