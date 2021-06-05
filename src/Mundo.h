@@ -1,4 +1,5 @@
 #pragma once
+#include "Pared.h"
 class Mundo
 {
 private:
@@ -17,4 +18,5 @@ public:
 	void dibuja();
 	bool cargarNivel();
 	void setNivel(int);
+	Pared suelo;
 };
