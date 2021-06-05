@@ -26,23 +26,32 @@
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaEnemigos.cpp" />
+    <ClCompile Include="src\ListaObstaculos.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\ObjetoMovil.cpp" />
     <ClCompile Include="src\Obstaculo.cpp" />
+    <ClCompile Include="src\ObstaculoAbsoluto.cpp" />
+    <ClCompile Include="src\ObstaculoSimple.cpp" />
+    <ClCompile Include="src\ObstaculoTiempo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Bonus.h" />
+    <ClInclude Include="src\ColorRGB.h" />
     <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Dimensiones.h" />
     <ClInclude Include="src\Enemigo.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaEnemigos.h" />
+    <ClInclude Include="src\ListaObstaculos.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\ObjetoMovil.h" />
     <ClInclude Include="src\Obstaculo.h" />
+    <ClInclude Include="src\ObstaculoAbsoluto.h" />
+    <ClInclude Include="src\ObstaculoSimple.h" />
+    <ClInclude Include="src\ObstaculoTiempo.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
