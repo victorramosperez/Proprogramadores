@@ -1,34 +1,16 @@
 ﻿  Interaccion.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(14,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(15,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(17,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(18,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(20,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(21,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(23,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(24,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(14,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(15,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(17,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(18,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(20,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(21,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(23,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\drak0\Documents\GitHub\Proprogramadores\src\Interaccion.cpp(24,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
   ListaObstaculos.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ListaObstaculos.cpp(51,20): error C2352: 'Interaccion::colision': llamada no válida de función miembro no estática
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.h(9): message : vea la declaración de 'Interaccion::colision'
-  Obstaculo.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Obstaculo.cpp(9,18): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'initializer list' (o bien no existe una conversión aceptable)
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Dimensiones.h(12,1): message : puede ser 'Dimensiones &Dimensiones::operator =(const Dimensiones &)'
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Obstaculo.cpp(9,18): message : al hacer coincidir la lista de argumentos '(Dimensiones, initializer list)'
-  ObstaculoAbsoluto.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoAbsoluto.cpp(8,18): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'initializer list' (o bien no existe una conversión aceptable)
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Dimensiones.h(12,1): message : puede ser 'Dimensiones &Dimensiones::operator =(const Dimensiones &)'
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoAbsoluto.cpp(8,18): message : al hacer coincidir la lista de argumentos '(Dimensiones, initializer list)'
-  ObstaculoSimple.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoSimple.cpp(7,18): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'initializer list' (o bien no existe una conversión aceptable)
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Dimensiones.h(12,1): message : puede ser 'Dimensiones &Dimensiones::operator =(const Dimensiones &)'
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoSimple.cpp(7,18): message : al hacer coincidir la lista de argumentos '(Dimensiones, initializer list)'
-  ObstaculoTiempo.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoTiempo.cpp(3,36): error C2511: 'ObstaculoTiempo::ObstaculoTiempo(void)': la función miembro sobrecargada no se ha encontrado en 'ObstaculoTiempo'
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoTiempo.h(4): message : vea la declaración de 'ObstaculoTiempo'
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoTiempo.cpp(4,20): error C3079: no se puede usar una lista de inicializadores como operando derecho de este operador de asignaciones
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoTiempo.cpp(5,21): error C3079: no se puede usar una lista de inicializadores como operando derecho de este operador de asignaciones
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoTiempo.cpp(6,23): error C3079: no se puede usar una lista de inicializadores como operando derecho de este operador de asignaciones
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoTiempo.cpp(7,19): error C3079: no se puede usar una lista de inicializadores como operando derecho de este operador de asignaciones
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\ObstaculoTiempo.cpp(8,3): error C2597: referencia no válida a miembro no static 'Obstaculo::dano'
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Obstaculo.h(13): message : vea la declaración de 'Obstaculo::dano'
+  Vector2D.cpp
   Generando código...
+Obstaculo.obj : error LNK2005: ya se definió "public: __cdecl Obstaculo::~Obstaculo(void)" (??1Obstaculo@@QEAA@XZ) en Interaccion.obj
+ListaObstaculos.obj : error LNK2019: símbolo externo "public: void __cdecl Obstaculo::dibuja(void)" (?dibuja@Obstaculo@@QEAAXXZ) sin resolver al que se hace referencia en la función "public: void __cdecl ListaObstaculos::dibuja(void)" (?dibuja@ListaObstaculos@@QEAAXXZ)
+ListaObstaculos.obj : error LNK2019: símbolo externo "public: void __cdecl Obstaculo::mueve(float)" (?mueve@Obstaculo@@QEAAXM@Z) sin resolver al que se hace referencia en la función "public: void __cdecl ListaObstaculos::mueve(float)" (?mueve@ListaObstaculos@@QEAAXM@Z)
+C:\Users\drak0\Documents\GitHub\Proprogramadores\bin\Pang.exe : fatal error LNK1120: 2 externos sin resolver

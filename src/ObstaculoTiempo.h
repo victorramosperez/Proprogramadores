@@ -3,6 +3,6 @@
 
 class ObstaculoTiempo : public Obstaculo 
 {
-	ObstaculoTiempo(int valDano);
+	ObstaculoTiempo();
 };
 

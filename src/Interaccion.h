@@ -6,6 +6,6 @@ class Interaccion
 public:
 	Interaccion();
 	~Interaccion();
-	bool colision(Obstaculo o, Hombre h);
+	static bool colision(Obstaculo o, Hombre h);
 };
 
