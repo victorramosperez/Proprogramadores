@@ -17,15 +17,18 @@ void Mundo::dibuja()
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
-	/*ETSIDI::setTextColor(1, 1, 0);
+	ETSIDI::setTextColor(1, 1, 0);
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 	ETSIDI::printxy("Esto es una prueba", -11, 19);
 	ETSIDI::setTextColor(1, 1, 1);
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-	ETSIDI::printxy("Dibujo en el mundo::dibuja()", 3.5, 19);*/
+	ETSIDI::printxy("Dibujo en el mundo::dibuja()", 3.5, 19);
+	plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
+	plataforma.dibuja();
+	cajita.dibuja();
 	
-	/*
-	glBegin(GL_POLYGON);
+	
+	/*glBegin(GL_POLYGON);
 	glColor3ub(0, 255, 0);
 	glVertex3f(-10.6f, 0.0f, 0.0f);
 	glColor3ub(0, 255, 0);
@@ -35,7 +38,7 @@ void Mundo::dibuja()
 	glColor3ub(0, 255, 0);
 	glVertex3f(10.6f, 0.f, 0.0f);
 	glEnd();*/
-	cargarNivel();
+	
 }
 
 bool Mundo::cargarNivel()
@@ -46,8 +49,10 @@ bool Mundo::cargarNivel()
 	if (nivel == 1)
 	{
 		//Crear mapa, enemigos
-		
-		//aqui es donde hay que poner el codigo de dibujo
+		ETSIDI::setTextColor(1, 1, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
+		ETSIDI::printxy("Esto es una prueba del nivel 1", -11, 5);
+		/*//aqui es donde hay que poner el codigo de dibujo
 		//NO CONSIGUE ENTRAR AL NVL 1
 		glBegin(GL_POLYGON);
 		glColor3ub(0, 255, 0);
@@ -58,13 +63,16 @@ bool Mundo::cargarNivel()
 		glVertex3f(10.6f, 10.6f, 0.0f);
 		glColor3ub(0, 255, 0);
 		glVertex3f(10.6f, 0.f, 0.0f);
-		glEnd();
+		glEnd();*/
 		//plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
 	}
 	if (nivel == 2)
 	{
 		//Crear mapa, enemigos
-		glBegin(GL_POLYGON);
+		ETSIDI::setTextColor(1, 1, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
+		ETSIDI::printxy("Esto es una prueba del nivel 2", 0, 5);
+		/*glBegin(GL_POLYGON);
 		glColor3ub(0, 255, 0);
 		glVertex3f(-10.6f, 0.0f, 0.0f);
 		glColor3ub(0, 255, 0);
@@ -73,7 +81,7 @@ bool Mundo::cargarNivel()
 		glVertex3f(10.6f, 10.6f, 0.0f);
 		glColor3ub(0, 255, 0);
 		glVertex3f(10.6f, 0.f, 0.0f);
-		glEnd();
+		glEnd();*/
 	}
 	if (nivel == 3)
 	{
@@ -96,12 +104,12 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	setNivel(0);
+	//setNivel(0);
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;
 	plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
-	cargarNivel();
+	//cargarNivel();
 
 }
 
@@ -116,5 +124,13 @@ void Mundo::tecla(unsigned char key)
 
 void Mundo::teclaEspecial(unsigned char key)
 {
-
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
+		//;
+		break;
+	case GLUT_KEY_RIGHT:
+		//hombre.setVel(5.0f, 0.0f);
+		break;
+	}
 }

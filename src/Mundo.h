@@ -1,5 +1,6 @@
 #pragma once
 #include "Pared.h"
+#include "Caja.h"
 class Mundo
 {
 private:
@@ -7,6 +8,7 @@ private:
 	float y_ojo;
 	float z_ojo;
 	bool impacto;
+	Caja cajita;
 	
 public: 
 	~Mundo();
