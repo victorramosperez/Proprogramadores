@@ -28,7 +28,8 @@ void Mundo::dibuja()
 	paredes.agregar(aux);
 	Pared* aux2 = new Pared(-5.0f, 5.0f, 5.0f, 5.0f);
 	paredes.agregar(aux2);
-
+	Pared* aux3 = new Pared(7.0f, 5.0f, 17.0f, 5.0f);
+	paredes.agregar(aux3);
 
 	paredes.dibuja();
 	cajita.dibuja();
@@ -76,7 +77,7 @@ void Mundo::inicializa()
 {
 	//setNivel(0);
 	x_ojo = 0;
-	y_ojo = 10;
+	y_ojo = 7.5;
 	z_ojo = 35;
 	//cargarNivel();
 

@@ -21,17 +21,18 @@ void Caja::dibuja()
 	techo.dibuja();
 	pared_izq.dibuja();
 	pared_dcha.dibuja();
-	////dibujo del fondo
-	//glEnable(GL_TEXTURE_2D);
-	//glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
-	//glDisable(GL_LIGHTING);
-	//glBegin(GL_POLYGON);
-	//glColor3f(1, 1, 1);
-	//glTexCoord2d(0, 1); glVertex2f(-10, 0);
-	//glTexCoord2d(1, 1); glVertex2f(10, 0);
-	//glTexCoord2d(1, 0); glVertex2f(10, 15);
-	//glTexCoord2d(0, 0); glVertex2f(-10, 15);
-	//glEnd();
-	//glEnable(GL_LIGHTING);
-	//glDisable(GL_TEXTURE_2D);
+	//dibujo del fondo
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo10.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1); glVertex3d(-10, 0,5);
+	glTexCoord2d(1, 1); glVertex3d(80, 0,5);
+	glTexCoord2d(1, 0); glVertex3d(80, 15,5);
+	glTexCoord2d(0, 0); glVertex3d(-10, 15,5);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+
 }
