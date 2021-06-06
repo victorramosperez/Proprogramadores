@@ -18,6 +18,6 @@ public:
 	void dibuja();
 	bool cargarNivel();
 	void setNivel(int);
-	Pared suelo21;
+	Pared plataforma;
 	int nivel;
 };

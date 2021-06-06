@@ -1,7 +1,5 @@
 #include "ListaObstaculos.h"
 
-
-
 ListaObstaculos::ListaObstaculos()
 {
 	numero = 0;

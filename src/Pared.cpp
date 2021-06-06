@@ -4,10 +4,10 @@ Pared::Pared()
 {
 	color.r = color.b = 0;
 	color.g = 255;
-	limite1.x = 0;
-	limite1.y = 0;
-	limite2.x = 0;
-	limite2.y = 0;
+	//limite1.x = 0;
+	//limite1.y = 0;
+	//limite2.x = 0;
+	//limite2.y = 0;
 }
 
 Pared::~Pared()

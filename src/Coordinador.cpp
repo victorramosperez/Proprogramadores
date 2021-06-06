@@ -24,20 +24,23 @@ void Coordinador::tecla(unsigned char key)
 		if (key == 'e')
 		{
 			mundo.inicializa();
+			mundo.cargarNivel();
 			estado = JUEGO;
 		}
 
 		if (key == '2')
 		{
-			mundo.nivel = 2;
 			mundo.inicializa();
+			mundo.nivel = 1;
+			mundo.cargarNivel();
 			estado = JUEGO;
 		}
 
 		if (key == '3')
 		{
-			mundo.nivel = 3;
 			mundo.inicializa();
+			mundo.nivel = 2;
+			mundo.cargarNivel();
 			estado = JUEGO;
 		}
 
@@ -72,6 +75,7 @@ void Coordinador::mueve()
 {
 	if (estado == JUEGO)
 	{
+		mundo.mueve();
 		/*mundo.mueve();
 		if (mundo.getNumEsferas() == 0)
 		{
