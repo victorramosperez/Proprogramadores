@@ -9,6 +9,7 @@ private:
 	Vector2D limite2;
 public:
 	Pared();
+	Pared(float x1, float y1, float x2, float y2);
 	~Pared();
 	void setColor(Byte r, Byte g, Byte b);
 	void setPos(float x1, float y1, float x2, float y2);

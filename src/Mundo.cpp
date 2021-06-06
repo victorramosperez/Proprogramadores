@@ -13,7 +13,7 @@ void Mundo::rotarOjo()
 void Mundo::dibuja()
 {
 	gluLookAt(x_ojo, y_ojo, z_ojo,  // posicion del ojo
-			0.0, y_ojo, 0.0,      // hacia que punto mira  (0,0,0) 
+			x_ojo, y_ojo, 0.0,      // hacia que punto mira  (0,0,0) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
@@ -23,22 +23,15 @@ void Mundo::dibuja()
 	ETSIDI::setTextColor(1, 1, 1);
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 	ETSIDI::printxy("Dibujo en el mundo::dibuja()", 3.5, 19);
-	plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
-	plataforma.dibuja();
+	
+	Pared* aux = new Pared(-5.0f, 9.0f, 5.0f, 9.0f);
+	paredes.agregar(aux);
+	Pared* aux2 = new Pared(-5.0f, 5.0f, 5.0f, 5.0f);
+	paredes.agregar(aux2);
+
+
+	paredes.dibuja();
 	cajita.dibuja();
-	
-	
-	/*glBegin(GL_POLYGON);
-	glColor3ub(0, 255, 0);
-	glVertex3f(-10.6f, 0.0f, 0.0f);
-	glColor3ub(0, 255, 0);
-	glVertex3f(-10.6f, 10.6f, 0.0f);
-	glColor3ub(0, 255, 0);
-	glVertex3f(10.6f, 10.6f, 0.0f);
-	glColor3ub(0, 255, 0);
-	glVertex3f(10.6f, 0.f, 0.0f);
-	glEnd();*/
-	
 }
 
 bool Mundo::cargarNivel()
@@ -52,19 +45,6 @@ bool Mundo::cargarNivel()
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 		ETSIDI::printxy("Esto es una prueba del nivel 1", -11, 5);
-		/*//aqui es donde hay que poner el codigo de dibujo
-		//NO CONSIGUE ENTRAR AL NVL 1
-		glBegin(GL_POLYGON);
-		glColor3ub(0, 255, 0);
-		glVertex3f(-10.6f, 0.0f, 0.0f);
-		glColor3ub(0, 255, 0);
-		glVertex3f(-10.6f, 10.6f, 0.0f);
-		glColor3ub(0, 255, 0);
-		glVertex3f(10.6f, 10.6f, 0.0f);
-		glColor3ub(0, 255, 0);
-		glVertex3f(10.6f, 0.f, 0.0f);
-		glEnd();*/
-		//plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
 	}
 	if (nivel == 2)
 	{
@@ -72,16 +52,6 @@ bool Mundo::cargarNivel()
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 		ETSIDI::printxy("Esto es una prueba del nivel 2", 0, 5);
-		/*glBegin(GL_POLYGON);
-		glColor3ub(0, 255, 0);
-		glVertex3f(-10.6f, 0.0f, 0.0f);
-		glColor3ub(0, 255, 0);
-		glVertex3f(-10.6f, 10.6f, 0.0f);
-		glColor3ub(0, 255, 0);
-		glVertex3f(10.6f, 10.6f, 0.0f);
-		glColor3ub(0, 255, 0);
-		glVertex3f(10.6f, 0.f, 0.0f);
-		glEnd();*/
 	}
 	if (nivel == 3)
 	{
@@ -106,9 +76,8 @@ void Mundo::inicializa()
 {
 	//setNivel(0);
 	x_ojo = 0;
-	y_ojo = 7.5;
+	y_ojo = 10;
 	z_ojo = 35;
-	plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
 	//cargarNivel();
 
 }
@@ -127,10 +96,10 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		//;
+		x_ojo = x_ojo - 2.5f;
 		break;
 	case GLUT_KEY_RIGHT:
-		//hombre.setVel(5.0f, 0.0f);
+		x_ojo=x_ojo+2.5f;
 		break;
 	}
 }

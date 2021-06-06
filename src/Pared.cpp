@@ -10,6 +10,15 @@ Pared::Pared()
 	//limite2.y = 0;
 }
 
+Pared::Pared(float x1, float y1, float x2, float y2)
+{
+	limite1.x = x1;
+	limite1.y = y1;
+	limite2.x = x2;
+	limite2.y = y2;
+	color.r = color.g = 255;
+	color.b = 0; //color distinto
+}
 Pared::~Pared()
 {
 }

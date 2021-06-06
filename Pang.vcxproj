@@ -28,6 +28,7 @@
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaEnemigos.cpp" />
     <ClCompile Include="src\ListaObstaculos.cpp" />
+    <ClCompile Include="src\ListaParedes.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\ObjetoMovil.cpp" />
     <ClCompile Include="src\Obstaculo.cpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaEnemigos.h" />
     <ClInclude Include="src\ListaObstaculos.h" />
+    <ClInclude Include="src\ListaParedes.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\ObjetoMovil.h" />
     <ClInclude Include="src\Obstaculo.h" />

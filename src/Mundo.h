@@ -1,6 +1,7 @@
 #pragma once
 #include "Pared.h"
 #include "Caja.h"
+#include "ListaParedes.h"
 class Mundo
 {
 private:
@@ -20,6 +21,6 @@ public:
 	void dibuja();
 	bool cargarNivel();
 	void setNivel(int);
-	Pared plataforma;
+	ListaParedes paredes;
 	int nivel;
 };
