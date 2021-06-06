@@ -17,12 +17,12 @@ void Mundo::dibuja()
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
-	ETSIDI::setTextColor(1, 1, 0);
+	/*ETSIDI::setTextColor(1, 1, 0);
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 	ETSIDI::printxy("Esto es una prueba", -11, 19);
 	ETSIDI::setTextColor(1, 1, 1);
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-	ETSIDI::printxy("Dibujo en el mundo::dibuja()", 3.5, 19);
+	ETSIDI::printxy("Dibujo en el mundo::dibuja()", 3.5, 19);*/
 	
 	/*
 	glBegin(GL_POLYGON);
@@ -35,6 +35,7 @@ void Mundo::dibuja()
 	glColor3ub(0, 255, 0);
 	glVertex3f(10.6f, 0.f, 0.0f);
 	glEnd();*/
+	cargarNivel();
 }
 
 bool Mundo::cargarNivel()
@@ -100,6 +101,8 @@ void Mundo::inicializa()
 	y_ojo = 7.5;
 	z_ojo = 35;
 	plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
+	cargarNivel();
+
 }
 
 Mundo::~Mundo()

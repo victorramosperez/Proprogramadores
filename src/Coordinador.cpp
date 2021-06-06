@@ -4,7 +4,7 @@
 
 Coordinador::Coordinador()
 {
-	estado = INICIO;
+	estado == INICIO;
 }
 
 Coordinador::~Coordinador()
@@ -24,7 +24,6 @@ void Coordinador::tecla(unsigned char key)
 		if (key == 'e')
 		{
 			mundo.inicializa();
-			mundo.cargarNivel();
 			estado = JUEGO;
 		}
 
@@ -32,7 +31,6 @@ void Coordinador::tecla(unsigned char key)
 		{
 			mundo.inicializa();
 			mundo.nivel = 1;
-			mundo.cargarNivel();
 			estado = JUEGO;
 		}
 
@@ -40,7 +38,6 @@ void Coordinador::tecla(unsigned char key)
 		{
 			mundo.inicializa();
 			mundo.nivel = 2;
-			mundo.cargarNivel();
 			estado = JUEGO;
 		}
 
