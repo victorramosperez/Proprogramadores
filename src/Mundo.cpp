@@ -34,6 +34,7 @@ void Mundo::dibuja()
 	paredes.dibuja();
 	cajita.dibuja();
 	hombre.dibuja();
+	enemigo.dibuja();
 }
 
 bool Mundo::cargarNivel()
