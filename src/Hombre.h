@@ -3,7 +3,8 @@
 #include "ObjetoMovil.h"
 #include "Bonus.h"
 #include "Obstaculo.h"
-
+#include "ETSIDI.h"
+using ETSIDI::SpriteSequence;
 class Hombre :public ObjetoMovil
 {
 protected:
@@ -26,6 +27,6 @@ public:
     Dimensiones getDim();
     //bool cogerBonus(Bonus b);
     //bool recibeDano(Obstaculo o);
-
+    SpriteSequence sprite{ "imagenes/pangPlayer.png", 5 };
     friend class Interaccion;
 };

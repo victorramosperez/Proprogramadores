@@ -33,6 +33,7 @@ void Mundo::dibuja()
 
 	paredes.dibuja();
 	cajita.dibuja();
+	hombre.dibuja();
 }
 
 bool Mundo::cargarNivel()
@@ -70,7 +71,8 @@ void Mundo::setNivel(int n)
 
 void Mundo::mueve()
 {
-
+	hombre.mueve(0.025f);
+	Interaccion::rebote(hombre, cajita);
 }
 
 void Mundo::inicializa()
@@ -80,7 +82,8 @@ void Mundo::inicializa()
 	y_ojo = 7.5;
 	z_ojo = 35;
 	//cargarNivel();
-
+	hombre.setPos(0, 0);
+	hombre.setVel(0.0f, 0.0f);
 }
 
 Mundo::~Mundo()
@@ -98,9 +101,11 @@ void Mundo::teclaEspecial(unsigned char key)
 	{
 	case GLUT_KEY_LEFT:
 		x_ojo = x_ojo - 2.5f;
+		hombre.setVel(-5.0f, 0.0f);
 		break;
 	case GLUT_KEY_RIGHT:
 		x_ojo=x_ojo+2.5f;
+		hombre.setVel(5.0f, 0.0f);
 		break;
 	}
 }

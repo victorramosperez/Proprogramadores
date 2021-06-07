@@ -2,6 +2,7 @@
 #include "Pared.h"
 #include "Caja.h"
 #include "ListaParedes.h"
+#include "Interaccion.h"
 class Mundo
 {
 private:
@@ -10,6 +11,7 @@ private:
 	float z_ojo;
 	bool impacto;
 	Caja cajita;
+	Hombre hombre;
 	
 public: 
 	~Mundo();
