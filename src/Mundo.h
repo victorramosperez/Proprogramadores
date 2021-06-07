@@ -3,6 +3,8 @@
 #include "Caja.h"
 #include "ListaParedes.h"
 #include "Interaccion.h"
+#include "Enemigo.h"
+
 class Mundo
 {
 private:
@@ -12,7 +14,7 @@ private:
 	bool impacto;
 	Caja cajita;
 	Hombre hombre;
-	
+	Enemigo enemigo;
 public: 
 	~Mundo();
 	void tecla(unsigned char key);
