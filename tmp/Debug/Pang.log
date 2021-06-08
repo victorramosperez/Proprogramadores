@@ -1,26 +1,3 @@
-﻿  Interaccion.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(35,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(36,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(41,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(42,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(47,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(48,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(53,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(54,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(74,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(75,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(77,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(78,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(80,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(81,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(83,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(84,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(90,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(91,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(93,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(94,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(96,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(97,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(99,30): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Interaccion.cpp(100,33): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-  Pang.vcxproj -> C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\bin\Pang.exe
+﻿  Mundo.cpp
+C:\Users\victo\Documents\GitHub\Proprogramadores\src\Mundo.cpp(25,50): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+  Pang.vcxproj -> C:\Users\victo\Documents\GitHub\Proprogramadores\bin\Pang.exe
