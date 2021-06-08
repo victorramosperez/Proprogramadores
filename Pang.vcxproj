@@ -29,6 +29,7 @@
     <ClCompile Include="src\ListaEnemigos.cpp" />
     <ClCompile Include="src\ListaObstaculos.cpp" />
     <ClCompile Include="src\ListaParedes.cpp" />
+    <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\ObjetoMovil.cpp" />
     <ClCompile Include="src\Obstaculo.cpp" />
@@ -37,6 +38,7 @@
     <ClCompile Include="src\ObstaculoTiempo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
+    <ClCompile Include="src\Plataforma.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +53,7 @@
     <ClInclude Include="src\ListaEnemigos.h" />
     <ClInclude Include="src\ListaObstaculos.h" />
     <ClInclude Include="src\ListaParedes.h" />
+    <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\ObjetoMovil.h" />
     <ClInclude Include="src\Obstaculo.h" />
@@ -58,6 +61,7 @@
     <ClInclude Include="src\ObstaculoSimple.h" />
     <ClInclude Include="src\ObstaculoTiempo.h" />
     <ClInclude Include="src\Pared.h" />
+    <ClInclude Include="src\Plataforma.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

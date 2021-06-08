@@ -24,6 +24,10 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 	ETSIDI::printxy("Dibujo en el mundo::dibuja()", 3.5, 19);
 	
+	Plataforma* aux = new Plataforma(1, 1, 10, 10);
+	plataformas.agregar(aux);
+
+	
 	/* MAPA 1:
 Pared* aux = new Pared(-3.0f, 5.0f, -2.0f, 5.0f);
 paredes.agregar(aux);
@@ -78,7 +82,7 @@ paredes.agregar(aux25);
 Pared* aux26 = new Pared(70.0f, 8.0f, 71.0f, 8.0f);
 paredes.agregar(aux26);
 */
-
+/*
 	Pared* aux27 = new Pared(-4.0f, 5.0f, -1.0f, 5.0f);
 	paredes.agregar(aux27);
 	Pared* aux28 = new Pared(4.0f, 0.0f, 4.0f, 5.0f);
@@ -161,9 +165,10 @@ paredes.agregar(aux26);
 	paredes.agregar(aux66);
 	Pared* aux67 = new Pared(76.0f, 0.0f, 76.0f, 6.0f);
 	paredes.agregar(aux67);
-
+	*/
 
 	paredes.dibuja();
+	plataformas.dibuja();
 	cajita.dibuja();
 	hombre.dibuja();
 	enemigo.dibuja();
@@ -207,6 +212,7 @@ void Mundo::mueve()
 {
 	hombre.mueve(0.025f);
 	Interaccion::rebote(hombre, cajita);
+	plataformas.rebote(hombre);
 }
 
 void Mundo::inicializa()
@@ -216,7 +222,7 @@ void Mundo::inicializa()
 	y_ojo = 7.5;
 	z_ojo = 35;
 	//cargarNivel();
-	hombre.setPos(0, 0);
+	hombre.setPos(0, 10.0f);
 	hombre.setVel(0.0f, 0.0f);
 }
 
@@ -226,7 +232,10 @@ Mundo::~Mundo()
 
 void Mundo::tecla(unsigned char key)
 {
-	
+	if (key == ' ' ) //&& Interaccion::rebote(hombre, cajita)
+	{
+		hombre.setVel(hombre.getVel().x, 7);
+	}
 }
 
 void Mundo::teclaEspecial(unsigned char key)

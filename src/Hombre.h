@@ -22,7 +22,9 @@ public:
     void dibuja();
     void mueve(float t);
     void setVel(float vx, float vy);
+    void setPos(float ix, float iy);
     float getAltura();
+    Vector2D getVel();
     Vector2D getPos();
     Dimensiones getDim();
     //bool cogerBonus(Bonus b);

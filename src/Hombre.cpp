@@ -3,8 +3,13 @@
 
 Hombre::Hombre()
 {
-    aceleracion.x = aceleracion.y = 0;
+    aceleracion.x = 0.0f;
+    aceleracion.y = -9.8f;
     Altura = 1.8f;
+    dim.limtop1 = (posicion.x-0.25f,posicion.y+0.9f);
+    dim.limtop2=(posicion.x + 0.25f, posicion.y + 0.9f);
+    dim.limbot1=(posicion.x - 0.25f, posicion.y - 0.9f);
+    dim.limbot2=(posicion.x + 0.25f, posicion.y - 0.9f);
     sprite.setCenter(1, 0);
     sprite.setSize(2, 2);
     Vida = 1;
@@ -38,7 +43,11 @@ void Hombre::mueve(float t)
     velocidad = velocidad + aceleracion * t;
     sprite.loop();
 }
-
+void Hombre::setPos(float ix, float iy)
+{
+    posicion.x = ix;
+    posicion.y = iy;
+}
 void Hombre::setVel(float vx, float vy)
 {
     velocidad.x = vx;
@@ -48,6 +57,11 @@ void Hombre::setVel(float vx, float vy)
 float Hombre::getAltura()
 {
     return Altura;
+}
+
+Vector2D Hombre::getVel()
+{
+    return velocidad;
 }
 
 Vector2D Hombre::getPos()

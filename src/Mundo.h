@@ -4,7 +4,8 @@
 #include "ListaParedes.h"
 #include "Interaccion.h"
 #include "Enemigo.h"
-
+#include "Plataforma.h"
+#include "ListaPlataformas.h"
 class Mundo
 {
 private:
@@ -15,6 +16,7 @@ private:
 	Caja cajita;
 	Hombre hombre;
 	Enemigo enemigo;
+	ListaPlataformas plataformas;
 public: 
 	~Mundo();
 	void tecla(unsigned char key);
