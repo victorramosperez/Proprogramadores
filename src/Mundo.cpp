@@ -35,6 +35,7 @@ void Mundo::dibuja()
 	cajita.dibuja();
 	hombre.dibuja();
 	enemigo.dibuja();
+	x_ojo = hombre.getPos().x;
 }
 
 bool Mundo::cargarNivel()
@@ -101,12 +102,17 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		x_ojo = x_ojo - 2.5f;
+		//x_ojo = x_ojo - 2.5f;
+		//x_ojo = hombre.getPos().x;
 		hombre.setVel(-5.0f, 0.0f);
+		
+
 		break;
 	case GLUT_KEY_RIGHT:
-		x_ojo=x_ojo+2.5f;
+		//x_ojo=x_ojo+2.5f;
 		hombre.setVel(5.0f, 0.0f);
+		//x_ojo = hombre.getPos().x;
+		//hombre.setPos(hombre.getPos().x + 2.5f, 0.0f);
 		break;
 	}
 }
