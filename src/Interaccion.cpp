@@ -43,45 +43,62 @@ bool Interaccion::rebote(Hombre& h, Caja c)
     return false;
 }
 bool Interaccion::rebote(Hombre& h, Plataforma& p)
-{   
+{       
     
+    bool resultado=true;
+    if (h.dim.limtop1.x >= p.dim.limtop2.x)
+    resultado=false;
+    else if (h.dim.limtop2.x <= p.dim.limtop1.x)
+    resultado=false;
+    else if (h.dim.limbot1.y >= p.dim.limtop1.y)
+    resultado=false;
+    else if (h.dim.limtop1.y <= p.dim.limbot1.y)
+    resultado=false;
+    
+    /*
+    bool resultado = false;
     if (p.getDim().limbot1.x < h.getDim().limbot1.x < p.getDim().limbot2.x
         && p.getDim().limbot1.y < h.getDim().limbot1.y < p.getDim().limtop1.y)
     {
-        h.setVel(0, h.getVel().y);
-        return true;
+        //h.setVel(0, h.getVel().y);
+        resultado = true;
     }
-    if (p.getDim().limbot1.x < h.getDim().limbot2.x < p.getDim().limbot2.x
+    else if (p.getDim().limbot1.x < h.getDim().limbot2.x < p.getDim().limbot2.x
         && p.getDim().limbot1.y < h.getDim().limbot2.y < p.getDim().limtop1.y)
     {
-        h.setVel(0, h.getVel().y);
-        return true;
+        //h.setVel(0, h.getVel().y);
+        resultado = true;
     }
-    if (p.getDim().limbot1.x < h.getDim().limtop1.x < p.getDim().limbot2.x
+    else if (p.getDim().limbot1.x < h.getDim().limtop1.x < p.getDim().limbot2.x
         && p.getDim().limbot1.y < h.getDim().limtop1.y < p.getDim().limtop1.y)
     {
-        h.setVel(h.getVel().x, 0);
-        return true;
+        //h.setVel(h.getVel().x, 0);
+        resultado = true;
     }
-    if (p.getDim().limbot1.x < h.getDim().limtop2.x < p.getDim().limbot2.x
+    else if (p.getDim().limbot1.x < h.getDim().limtop2.x < p.getDim().limbot2.x
         && p.getDim().limbot1.y < h.getDim().limtop2.y < p.getDim().limtop1.y)
     {
-        h.setVel(h.getVel().x, 0);
-        return true;
+        //h.setVel(h.getVel().x, 0);
+        resultado = true;
     }
-    return false;
+    else resultado = false;
+    //return false;
+   */
 
-    /*float xmax = p.dim.limtop2.x;
-    float xmin = p.dim.limtop1.x;
-    float ymax = p.dim.limtop2.y;
-    float ymin = p.dim.limbot2.y;
-   
-    if (h.posicion.y > ymax)
-    {
-        h.posicion.y = ymax;
-        return true;
-    }
-    return false;*/
+    //Cayendo
+    if (resultado && h.posicion.y > p.dim.limtop1.y)
+        h.setPos(h.getPos().x, p.dim.limtop1.y);
+    //Saltando
+    if (resultado && h.posicion.y < p.dim.limbot1.y)
+        h.setPos(h.getPos().x, p.dim.limbot1.y);
+    //hacia la derecha
+    if (resultado && h.posicion.x < p.dim.limtop1.x)
+        h.setPos(p.dim.limtop1.x, h.getPos().y);
+    //hacia la izquierda
+    if (resultado && h.posicion.x > p.dim.limtop2.x)
+        h.setPos(p.dim.limtop2.x, h.getPos().y);
+
+    return resultado;
 }
 bool Interaccion::colision(Obstaculo o, Hombre h)
 {
@@ -112,6 +129,24 @@ bool Interaccion::colision(Bonus b, Hombre h)
         return true;
     if (b.getDim().limbot1.x < h.getDim().limtop2.x < b.getDim().limbot2.x
         && b.getDim().limbot1.y < h.getDim().limtop2.y < b.getDim().limtop1.y)
+        return true;
+    return false;
+}
+
+bool Interaccion::colision(Enemigo e, Hombre h)
+{
+
+    if (e.getDim().limbot1.x < h.getDim().limbot1.x < e.getDim().limbot2.x
+        && e.getDim().limbot1.y < h.getDim().limbot1.y < e.getDim().limtop1.y)
+        return true;
+    if (e.getDim().limbot1.x < h.getDim().limbot2.x < e.getDim().limbot2.x
+        && e.getDim().limbot1.y < h.getDim().limbot2.y < e.getDim().limtop1.y)
+        return true;
+    if (e.getDim().limbot1.x < h.getDim().limtop1.x < e.getDim().limbot2.x
+        && e.getDim().limbot1.y < h.getDim().limtop1.y < e.getDim().limtop1.y)
+        return true;
+    if (e.getDim().limbot1.x < h.getDim().limtop2.x < e.getDim().limbot2.x
+        && e.getDim().limbot1.y < h.getDim().limtop2.y < e.getDim().limtop1.y)
         return true;
     return false;
 }

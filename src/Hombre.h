@@ -11,8 +11,9 @@ protected:
     Vector2D posicion;
     Vector2D velocidad;
     Vector2D aceleracion;
+    float altura = 1.8f;
+    float anchura = 0.5f;
     Dimensiones dim;
-    float Altura;
     int Vida;
     bool Vivo;
 

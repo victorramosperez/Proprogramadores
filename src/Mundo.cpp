@@ -105,7 +105,8 @@ void Mundo::dibuja()
 	Plataforma* aux38 = new Plataforma(71, 0, 73, 6);
 	plataformas.agregar(aux38);
 */
-
+/*
+	//Plataformas nivel 3
 	Plataforma* aux39 = new Plataforma(1, 4, 6, 5);
 	plataformas.agregar(aux39);
 	Plataforma* aux40 = new Plataforma(8, 0, 9, 1);
@@ -171,8 +172,9 @@ void Mundo::dibuja()
 
 	Plataforma* aux70 = new Plataforma(0, 12, 80, 13);
 	plataformas.agregar(aux70);
-
-
+	*/
+	Plataforma* aux = new Plataforma(0, 1, 80, 2);
+	plataformas.agregar(aux);
 	paredes.dibuja();
 	plataformas.dibuja();
 	cajita.dibuja();
@@ -219,6 +221,7 @@ void Mundo::mueve()
 	hombre.mueve(0.025f);
 	Interaccion::rebote(hombre, cajita);
 	plataformas.rebote(hombre);
+	Interaccion::colision(enemigo, hombre);
 }
 
 void Mundo::inicializa()
@@ -228,7 +231,7 @@ void Mundo::inicializa()
 	y_ojo = 7.5;
 	z_ojo = 35;
 	//cargarNivel();
-	hombre.setPos(0, 10.0f);
+	hombre.setPos(0, 0.0f);
 	hombre.setVel(0.0f, 0.0f);
 }
 
@@ -240,7 +243,7 @@ void Mundo::tecla(unsigned char key)
 {
 	if (key == ' ') //&& Interaccion::rebote(hombre, cajita)
 	{
-		hombre.setVel(hombre.getVel().x, 7);
+		hombre.setVel(hombre.getVel().x, 14);
 	}
 }
 
@@ -249,12 +252,12 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.setVel(-5.0f, 0.0f);
+		hombre.setVel(-5.0f, hombre.getVel().y);
 		//hombre.setPos(hombre.getPos().x - 0.2f, hombre.getPos().y);
 
 		break;
 	case GLUT_KEY_RIGHT:
-		hombre.setVel(5.0f, 0.0f);
+		hombre.setVel(5.0f, hombre.getVel().y);
 		//hombre.setPos(hombre.getPos().x + 0.2f, hombre.getPos().y);
 		break;
 	}

@@ -4,12 +4,11 @@
 Hombre::Hombre()
 {
     aceleracion.x = 0.0f;
-    aceleracion.y = -9.8f;
-    Altura = 1.8f;
-    dim.limtop1 = (posicion.x-0.25f,posicion.y+0.9f);
+    aceleracion.y = -19.6f;
+   /* dim.limtop1 = (posicion.x-0.25f,posicion.y+0.9f);
     dim.limtop2=(posicion.x + 0.25f, posicion.y + 0.9f);
     dim.limbot1=(posicion.x - 0.25f, posicion.y - 0.9f);
-    dim.limbot2=(posicion.x + 0.25f, posicion.y - 0.9f);
+    dim.limbot2=(posicion.x + 0.25f, posicion.y - 0.9f);*/
     sprite.setCenter(1, 0);
     sprite.setSize(2, 2);
     Vida = 1;
@@ -42,6 +41,18 @@ void Hombre::mueve(float t)
     posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
     velocidad = velocidad + aceleracion * t;
     sprite.loop();
+    //dim.limtop1 = (posicion.x - 0.25f, posicion.y + 0.9f);
+    dim.limtop1.x = posicion.x - 0.25f;
+    dim.limtop1.y = posicion.y + 0.9f;
+    //dim.limtop2 = (posicion.x + 0.25f, posicion.y + 0.9f);
+    dim.limtop2.x = posicion.x + 0.25f;
+    dim.limtop2.y = posicion.y + 0.9f;
+    //dim.limbot1 = (posicion.x - 0.25f, posicion.y - 0.9f);
+    dim.limbot1.x = posicion.x - 0.25f;
+    dim.limbot1.y = posicion.y - 0.9f;
+    //dim.limbot2 = (posicion.x + 0.25f, posicion.y - 0.9f);
+    dim.limbot2.x = posicion.x + 0.25f;
+    dim.limbot2.y = posicion.y - 0.9f;
 }
 void Hombre::setPos(float ix, float iy)
 {
@@ -56,7 +67,7 @@ void Hombre::setVel(float vx, float vy)
 
 float Hombre::getAltura()
 {
-    return Altura;
+    return altura;
 }
 
 Vector2D Hombre::getVel()
