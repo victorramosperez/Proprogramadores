@@ -18,7 +18,7 @@ public:
 	void setPos(float posx, float posy);
 	Dimensiones getDim();
 	Vector2D getPos();
-	SpriteSequence sprite{ "imagenes/pinchos2.png", 1 };
+	SpriteSequence sprite{ "imagenes/lava4.png", 1 };
 friend class Interaccion;
 };
 

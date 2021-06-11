@@ -4,6 +4,8 @@ Disparo::Disparo()
 {
 	radio = 0.25f;
 	velocidad.x = 20.0f;
+	sprite.setCenter(1, 0);
+	sprite.setSize(0.5, 0.5);
 }
 Disparo::~Disparo()
 {
@@ -19,7 +21,7 @@ void Disparo::dibuja()
 	dim.limtop2.x = posicion.x + radio;
 	dim.limtop2.y = posicion.y + radio;
 
-
+	/*
 	glColor3f(0.0f, 1.0f, 1.0f);
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 10);
@@ -29,7 +31,21 @@ void Disparo::dibuja()
 	glVertex3f(origen.x, origen.y, 10);
 	glVertex3f(posicion.x, posicion.y, 10);
 	glEnd();
+	*/
 
+	glPushMatrix();
+	glTranslatef(posicion.x, posicion.y, 10);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	//glutSolidSphere(Altura, 20, 20);
+	//gestion de direccion y animacion
+	if (velocidad.x > 0.01)sprite.flip(false, false);
+	if (velocidad.x < -0.01)sprite.flip(true, false);
+	if ((velocidad.x < 0.01) && (velocidad.x > -0.01))
+		sprite.setState(0);
+	else if (sprite.getState() == 0)
+		sprite.setState(1, false);
+	sprite.draw();
+	glPopMatrix();
 }
 
 float Disparo::getRadio()

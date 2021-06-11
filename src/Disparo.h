@@ -1,6 +1,9 @@
 #pragma once
 #include "Vector2D.h"
 #include "ObjetoMovil.h"
+#include "ETSIDI.h"
+using ETSIDI::SpriteSequence;
+
 class Disparo : public ObjetoMovil
 {
 protected:
@@ -15,4 +18,5 @@ public:
 	float getRadio();
 	void setPos(float ix, float iy);
 	void setPos(Vector2D pos);
+	SpriteSequence sprite{ "imagenes/disparo.png", 1 };
 };

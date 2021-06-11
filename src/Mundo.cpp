@@ -297,7 +297,7 @@ void Mundo::tecla(unsigned char key)
 		{
 			Disparo* d = new Disparo();
 			Vector2D pos = hombre.getPos();
-			d->setPos(pos.x, pos.y + 1.2f);
+			d->setPos(pos.x+1.5f, pos.y + 1.0f);
 			disparos.agregar(d);
 			ETSIDI::play("sonidos/disparo.wav");
 		}
@@ -305,7 +305,7 @@ void Mundo::tecla(unsigned char key)
 		{
 			Disparo* d = new Disparo();
 			Vector2D pos = hombre.getPos();
-			d->setPos(pos.x, pos.y + 1.2f);
+			d->setPos(pos.x-1.5f, pos.y + 1.0f);
 			d->setVel(-20.0f, 0.0f);
 			disparos.agregar(d);
 			ETSIDI::play("sonidos/disparo.wav");
