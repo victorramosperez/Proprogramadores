@@ -43,7 +43,14 @@ void ListaEnemigos::dibuja()
 		lista[i]->dibuja();
 }
 
-
+void ListaEnemigos::colision(Hombre &h)
+{
+	for (int i = 0;i < numero;i++)
+	{
+		Interaccion::colision(h, *(lista[i]));
+		//h.recibeDano();
+	}
+}
 /*
 void ListaEnemigos::colision(Pared p)
 {

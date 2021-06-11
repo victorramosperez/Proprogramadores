@@ -12,10 +12,7 @@ public:
 	void destruirContenido();
 	void mueve(float t);
 	void dibuja();
-	void colision(Disparo d);
-	void colision(Pared p);
-	void colision(Caja c);
-	void colision(Plataforma p);
+	void colision(Hombre &h);
 	int getNumero() { return numero; }
 	Enemigo* operator[](int);
 	void eliminar(int);

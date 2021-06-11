@@ -14,8 +14,8 @@ protected:
     float altura = 1.8f;
     float anchura = 0.5f;
     Dimensiones dim;
-    int Vida;
-    bool Vivo;
+    int vida;
+    bool vivo;
 
 public:
     Hombre();

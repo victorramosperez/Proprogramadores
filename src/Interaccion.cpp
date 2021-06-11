@@ -132,7 +132,7 @@ bool Interaccion::colision(Disparo d, Enemigo e)
     return resultado;
 }
 
-bool Interaccion::colision(Hombre h, Enemigo e)
+bool Interaccion::colision(Hombre &h, Enemigo e)
 {
     bool resultado = true;
     if (h.dim.limtop1.x >= e.dim.limtop2.x)
@@ -143,6 +143,34 @@ bool Interaccion::colision(Hombre h, Enemigo e)
         resultado = false;
     else if (h.dim.limtop1.y <= e.dim.limbot1.y)
         resultado = false;
+
+    //Cayendo
+    if (resultado && h.posicion.y + 0.8 > e.dim.limtop1.y)
+    {
+        h.setPos(h.getPos().x, e.dim.limtop1.y);
+        h.setVel(h.getVel().x, 10.0f);
+        return resultado;
+    }
+    //Saltando
+    if (resultado && h.posicion.y < e.dim.limbot1.y)
+    {
+        h.setPos(h.getPos().x, e.dim.limbot1.y - 2.0f);
+        return resultado;
+    }
+    //hacia la derecha
+    if (resultado && h.posicion.x < e.dim.limtop1.x)
+    {
+        h.setPos(e.dim.limtop1.x - 0.6f, h.getPos().y);
+        h.setVel(-5.0f, h.getVel().y);
+        return resultado;
+    }
+    //hacia la izquierda
+    if (resultado && h.posicion.x > e.dim.limtop2.x)
+    {
+        h.setPos(e.dim.limtop2.x + 0.6f, h.getPos().y);
+        h.setVel(5.0f, h.getVel().y);
+        return resultado;
+    }
     return resultado;
 }
 

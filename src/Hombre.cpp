@@ -7,8 +7,8 @@ Hombre::Hombre()
     aceleracion.y = -19.6f;
     sprite.setCenter(1, 0);
     sprite.setSize(2, 2);
-    Vida = 1;
-    Vivo = true;
+    vida = 1;
+    vivo = true;
 }
 
 Hombre::~Hombre()

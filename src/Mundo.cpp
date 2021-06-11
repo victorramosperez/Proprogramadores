@@ -246,6 +246,26 @@ void Mundo::mueve()
 			}
 		}
 	}
+	/*for (int i = 0;i < enemigos.getNumero();i++)
+	{
+		if (Interaccion::colision(hombre, *enemigos[i]))
+		{
+			hombre.setVel(hombre.getVel().x, 3);
+			if (hombre.getVel().x >= 0.0f)
+			{
+				hombre.setPos(enemigos[i]->getDim().limtop1.x-0.5f, enemigos[i]->getDim().limtop1.y);
+				hombre.setVel(-3.0f, hombre.getVel().y);
+			}
+			else
+			{
+				hombre.setPos(enemigos[i]->getDim().limtop2.x+0.5f, enemigos[i]->getDim().limtop2.y);
+				hombre.setVel(3.0f, hombre.getVel().y);
+			}
+		}
+			
+
+	}*/
+	enemigos.colision(hombre);
 }
 
 void Mundo::inicializa()
@@ -255,7 +275,7 @@ void Mundo::inicializa()
 	y_ojo = 7.5;
 	z_ojo = 35;
 	//cargarNivel();
-	hombre.setPos(0, 0.0f);
+	hombre.setPos(-7.0f, 0.0f);
 	hombre.setVel(0.0f, 0.0f);
 	Enemigo* aux64 = new Enemigo();
 	enemigos.agregar(aux64);
