@@ -72,6 +72,21 @@ void ListaDisparos::colision(Caja c)
 	}
 }
 
+void ListaDisparos::colision(Plataforma p)
+{
+	for (int i = 0;i < numero;i++)
+	{
+		if (Interaccion::colision(*(lista[i]), p))
+		{
+			delete lista[i];
+			numero--;
+			for (int j = i;j < numero;j++)
+				lista[j] = lista[j + 1];
+		}
+
+	}
+}
+
 Disparo* ListaDisparos::operator[](int i)
 {
 	if (i >= numero)//si me paso, devuelvo la ultima

@@ -231,6 +231,8 @@ void Mundo::mueve()
 	plataformas.rebote(hombre);
 	Interaccion::colision(enemigo, hombre);
 	disparos.colision(caja);
+	for (int i = 0; i < plataformas.getNumero();i++)
+		disparos.colision(*plataformas[i]);
 }
 
 void Mundo::inicializa()
@@ -254,7 +256,7 @@ void Mundo::tecla(unsigned char key)
 	{
 		hombre.setVel(hombre.getVel().x, 14);
 	}
-	if (key == 'm') //&& Interaccion::rebote(hombre, caja)
+	if (key == 'm') 
 	{
 		if (hombre.getVel().x >= 0.00)
 		{

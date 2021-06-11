@@ -6,6 +6,7 @@ class Disparo : public ObjetoMovil
 protected:
 	float radio;
 	Vector2D origen;
+	
 public:
 	Disparo();
 	~Disparo();

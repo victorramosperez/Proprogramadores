@@ -10,6 +10,16 @@ Disparo::~Disparo()
 }
 void Disparo::dibuja()
 {
+	dim.limbot1.x = posicion.x - radio;
+	dim.limbot1.y = posicion.y - radio;
+	dim.limbot2.x = posicion.x + radio;
+	dim.limbot2.y = posicion.y - radio;
+	dim.limtop1.x = posicion.x - radio;
+	dim.limtop1.y = posicion.y + radio;
+	dim.limtop2.x = posicion.x + radio;
+	dim.limtop2.y = posicion.y + radio;
+
+
 	glColor3f(0.0f, 1.0f, 1.0f);
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 10);

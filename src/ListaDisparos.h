@@ -14,6 +14,7 @@ public:
 	void dibuja();
 	void colision(Pared p);
 	void colision(Caja c);
+	void colision(Plataforma p);
 	int getNumero() { return numero; }
 	Disparo* operator[](int);
 	void eliminar(int);

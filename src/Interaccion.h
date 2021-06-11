@@ -18,5 +18,6 @@ public:
 	static bool rebote(Hombre& h, Plataforma& p);
 	static bool colision(Disparo d, Pared p);
 	static bool colision(Disparo d, Caja c);
+	static bool colision(Disparo d, Plataforma p);
 };
 

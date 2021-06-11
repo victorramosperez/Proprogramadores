@@ -132,6 +132,24 @@ bool Interaccion::colision(Disparo d, Caja c)
         return true;
     return false;
 }
+
+
+bool Interaccion::colision(Disparo d, Plataforma p)
+{
+    bool resultado = true;
+    if (d.dim.limtop1.x >= p.dim.limtop2.x)
+        resultado = false;
+    else if (d.dim.limtop2.x <= p.dim.limtop1.x)
+        resultado = false;
+    else if (d.dim.limbot1.y >= p.dim.limtop1.y)
+        resultado = false;
+    else if (d.dim.limtop1.y <= p.dim.limbot1.y)
+        resultado = false;
+    return resultado;
+}
+
+
+
 bool Interaccion::colision(Obstaculo o, Hombre h)
 {
     if (o.getDim().limbot1.x < h.getDim().limbot1.x < o.getDim().limbot2.x
