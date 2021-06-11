@@ -173,7 +173,7 @@ void Mundo::dibuja()
 	Plataforma* aux70 = new Plataforma(0, 12, 80, 13);
 	plataformas.agregar(aux70);
 	*/
-	Plataforma* aux = new Plataforma(0, 1, 80, 2);
+	Plataforma* aux = new Plataforma(0, 3, 80, 4);
 	plataformas.agregar(aux);
 	paredes.dibuja();
 	plataformas.dibuja();
