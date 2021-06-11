@@ -56,12 +56,14 @@ void Hombre::mueve(float t)
     dim.limtop2.y = posicion.y + 1.8f;
     //dim.limbot1 = (posicion.x - 0.25f, posicion.y - 0.9f);
     dim.limbot1.x = posicion.x - 0.6f;
-    dim.limbot1.y = posicion.y;
+    dim.limbot1.y = posicion.y-0.3f;
     //dim.limbot2 = (posicion.x + 0.25f, posicion.y - 0.9f);
     dim.limbot2.x = posicion.x + 0.6f;
-    dim.limbot2.y = posicion.y;
+    dim.limbot2.y = posicion.y-0.3f;
     posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-    velocidad = velocidad + aceleracion * t;
+    if (velocidad.y >= -7.5f)
+        velocidad = velocidad + aceleracion * t;
+    else velocidad.y = -7.5f;
     sprite.loop();
     
 }

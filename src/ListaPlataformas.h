@@ -14,7 +14,7 @@ public:
 	Plataforma* colision(Hombre& h);
 	Plataforma* operator [](int i);
 	int getNumero() { return numero; }
-	void rebote(Hombre h);
+	void rebote(Hombre& h);
 private:
 	Plataforma* lista[MAX_PLATAFORMAS];
 	int numero;

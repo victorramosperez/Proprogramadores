@@ -87,16 +87,32 @@ bool Interaccion::rebote(Hombre& h, Plataforma& p)
 
     //Cayendo
     if (resultado && h.posicion.y > p.dim.limtop1.y)
-        h.setPos(h.getPos().x, p.dim.limtop1.y);
+    {
+        h.setPos(h.getPos().x, p.dim.limtop1.y + 0.3f);
+        h.setVel(h.getVel().x, 0.0f);
+        return resultado;
+    }
     //Saltando
     if (resultado && h.posicion.y < p.dim.limbot1.y)
-        h.setPos(h.getPos().x, p.dim.limbot1.y);
+    {
+        h.setPos(h.getPos().x, p.dim.limbot1.y - 2.0f);
+        h.setVel(h.getVel().x, 0.0f);
+        return resultado;
+    }
     //hacia la derecha
     if (resultado && h.posicion.x < p.dim.limtop1.x)
-        h.setPos(p.dim.limtop1.x, h.getPos().y);
+    {
+        h.setPos(p.dim.limtop1.x-0.6f, h.getPos().y);
+        h.setVel(0.0f, h.getVel().y);
+        return resultado;
+    }
     //hacia la izquierda
     if (resultado && h.posicion.x > p.dim.limtop2.x)
-        h.setPos(p.dim.limtop2.x, h.getPos().y);
+    {
+        h.setPos(p.dim.limtop2.x+0.6f, h.getPos().y);
+        h.setVel(0.0f, h.getVel().y);
+        return resultado;
+    }
 
     return resultado;
 }

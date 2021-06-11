@@ -67,7 +67,7 @@ void Mundo::dibuja()
 	plataformas.agregar(aux20);
 */
 
-/*	MAPA 2:
+/*	//MAPA 2:
 	Plataforma* aux21 = new Plataforma(1, 4, 4, 5);
 	plataformas.agregar(aux21);
 	Plataforma* aux22 = new Plataforma(9, 0, 11, 5);
@@ -104,8 +104,8 @@ void Mundo::dibuja()
 	plataformas.agregar(aux37);
 	Plataforma* aux38 = new Plataforma(71, 0, 73, 6);
 	plataformas.agregar(aux38);
-*/
-/*
+	*/
+	/*
 	//Plataformas nivel 3
 	Plataforma* aux39 = new Plataforma(1, 4, 6, 5);
 	plataformas.agregar(aux39);
@@ -173,14 +173,21 @@ void Mundo::dibuja()
 	Plataforma* aux70 = new Plataforma(0, 12, 80, 13);
 	plataformas.agregar(aux70);
 	*/
+
 	Plataforma* aux = new Plataforma(0, 3, 80, 4);
 	plataformas.agregar(aux);
+	Plataforma* aux2 = new Plataforma(-5, 0, -4, 4);
+	plataformas.agregar(aux2);
+
+
+
 	paredes.dibuja();
 	plataformas.dibuja();
 	cajita.dibuja();
 	hombre.dibuja();
 	enemigo.dibuja();
 	x_ojo = hombre.getPos().x;
+
 }
 
 bool Mundo::cargarNivel()

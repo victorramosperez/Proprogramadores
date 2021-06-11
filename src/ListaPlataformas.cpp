@@ -54,8 +54,9 @@ Plataforma* ListaPlataformas::operator [](int i)
 	return lista[i];
 }
 
-void ListaPlataformas::rebote(Hombre h)
+void ListaPlataformas::rebote(Hombre& h)
 {
 	for (int i = 0;i < numero;i++)
-		Interaccion::rebote(h,*(lista[i]));
+		Interaccion::rebote(h, *(lista[i]));
+		
 }
