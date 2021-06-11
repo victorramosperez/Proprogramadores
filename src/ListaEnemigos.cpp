@@ -43,19 +43,7 @@ void ListaEnemigos::dibuja()
 		lista[i]->dibuja();
 }
 
-void ListaEnemigos::colision(Disparo d)
-{
-	for (int i = 0;i < numero;i++)
-	{
-		if (Interaccion::colision(d, *(lista[i])))
-		{
-			delete lista[i];
-			numero--;
-			for (int j = i;j < numero;j++)
-				lista[j] = lista[j + 1];
-		}
-	}
-}
+
 /*
 void ListaEnemigos::colision(Pared p)
 {

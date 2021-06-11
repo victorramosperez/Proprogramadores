@@ -20,5 +20,6 @@ public:
 	static bool colision(Disparo d, Caja c);
 	static bool colision(Disparo d, Plataforma p);
 	static bool colision(Disparo d, Enemigo p);
+	static bool colision(Hombre h, Enemigo e);
 };
 

@@ -132,7 +132,19 @@ bool Interaccion::colision(Disparo d, Enemigo e)
     return resultado;
 }
 
-
+bool Interaccion::colision(Hombre h, Enemigo e)
+{
+    bool resultado = true;
+    if (h.dim.limtop1.x >= e.dim.limtop2.x)
+        resultado = false;
+    else if (h.dim.limtop2.x <= e.dim.limtop1.x)
+        resultado = false;
+    else if (h.dim.limbot1.y >= e.dim.limtop1.y)
+        resultado = false;
+    else if (h.dim.limtop1.y <= e.dim.limbot1.y)
+        resultado = false;
+    return resultado;
+}
 
 bool Interaccion::colision(Obstaculo o, Hombre h)
 {

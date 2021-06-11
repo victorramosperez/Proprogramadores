@@ -180,8 +180,6 @@ void Mundo::dibuja()
 	plataformas.agregar(aux2);
 	*/
 
-	Enemigo* aux64 = new Enemigo();
-	enemigos.agregar(aux64);
 	paredes.dibuja();
 	plataformas.dibuja();
 	disparos.dibuja();
@@ -189,6 +187,7 @@ void Mundo::dibuja()
 	caja.dibuja();
 	hombre.dibuja();
 	x_ojo = hombre.getPos().x;
+
 }
 
 bool Mundo::cargarNivel()
@@ -234,8 +233,19 @@ void Mundo::mueve()
 	disparos.colision(caja);
 	for (int i = 0; i < plataformas.getNumero();i++)
 		disparos.colision(*plataformas[i]);
-	for (int i = 0; i < disparos.getNumero();i++)
-		enemigos.colision(*disparos[i]);
+	
+	for (int i = disparos.getNumero();i > 0;i--)
+	{
+		for (int j = disparos.getNumero();j > 0;j--)
+		{
+			if (Interaccion::colision(*disparos[j], *enemigos[i]))
+			{
+				enemigos.eliminar(enemigos[i]);
+				disparos.eliminar(disparos[j]);
+				//puntos += 100;
+			}
+		}
+	}
 }
 
 void Mundo::inicializa()
@@ -247,6 +257,8 @@ void Mundo::inicializa()
 	//cargarNivel();
 	hombre.setPos(0, 0.0f);
 	hombre.setVel(0.0f, 0.0f);
+	Enemigo* aux64 = new Enemigo();
+	enemigos.agregar(aux64);
 }
 
 Mundo::~Mundo()
