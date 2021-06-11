@@ -180,13 +180,14 @@ void Mundo::dibuja()
 	plataformas.agregar(aux2);
 	*/
 
-
+	Enemigo* aux64 = new Enemigo();
+	enemigos.agregar(aux64);
 	paredes.dibuja();
 	plataformas.dibuja();
 	disparos.dibuja();
+	enemigos.dibuja();
 	caja.dibuja();
 	hombre.dibuja();
-	enemigo.dibuja();
 	x_ojo = hombre.getPos().x;
 }
 
@@ -227,12 +228,14 @@ void Mundo::mueve()
 {
 	hombre.mueve(0.025f);
 	disparos.mueve(0.025f);
+	enemigos.mueve(0.025f);
 	Interaccion::rebote(hombre, caja);
 	plataformas.rebote(hombre);
-	Interaccion::colision(enemigo, hombre);
 	disparos.colision(caja);
 	for (int i = 0; i < plataformas.getNumero();i++)
 		disparos.colision(*plataformas[i]);
+	for (int i = 0; i < disparos.getNumero();i++)
+		enemigos.colision(*disparos[i]);
 }
 
 void Mundo::inicializa()
@@ -258,7 +261,7 @@ void Mundo::tecla(unsigned char key)
 		{
 			Disparo* d = new Disparo();
 			Vector2D pos = hombre.getPos();
-			d->setPos(pos.x, pos.y + 0.7f);
+			d->setPos(pos.x, pos.y + 1.2f);
 			disparos.agregar(d);
 			ETSIDI::play("sonidos/disparo.wav");
 		}
@@ -266,7 +269,7 @@ void Mundo::tecla(unsigned char key)
 		{
 			Disparo* d = new Disparo();
 			Vector2D pos = hombre.getPos();
-			d->setPos(pos.x, pos.y + 0.7f);
+			d->setPos(pos.x, pos.y + 1.2f);
 			d->setVel(-20.0f, 0.0f);
 			disparos.agregar(d);
 			ETSIDI::play("sonidos/disparo.wav");

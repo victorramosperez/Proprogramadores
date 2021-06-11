@@ -30,6 +30,6 @@ public:
     Dimensiones getDim();
     //bool cogerBonus(Bonus b);
     //bool recibeDano(Obstaculo o);
-    SpriteSequence sprite{ "imagenes/samus.png", 3 };
+    SpriteSequence sprite{ "imagenes/samus2.png", 3 };
     friend class Interaccion;
 };

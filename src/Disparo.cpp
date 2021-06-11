@@ -29,6 +29,7 @@ void Disparo::dibuja()
 	glVertex3f(origen.x, origen.y, 10);
 	glVertex3f(posicion.x, posicion.y, 10);
 	glEnd();
+
 }
 
 float Disparo::getRadio()
