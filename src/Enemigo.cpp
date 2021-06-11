@@ -12,6 +12,22 @@ Enemigo::Enemigo()
    
 }
 
+Enemigo::Enemigo(float ix, float iy, float ixmin, float ixmax)
+{
+    Direccion = 0;
+    Vivo = true;
+    Vida = 1;
+    velocidad.x = 2.5f;
+    aceleracion.x = aceleracion.y = 0;
+    Altura = 1.8f;
+    posicion.x = ix;
+    posicion.y = iy;
+    sprite.setCenter(1, 0);
+    sprite.setSize(2, 2);
+    xmax = ixmax;
+    xmin = ixmin;
+}
+
 Enemigo::~Enemigo()
 {
 
@@ -46,7 +62,7 @@ void Enemigo::dibuja()
     dim.limbot2.x = posicion.x + 1.0f;
     dim.limbot2.y = posicion.y;//
 	
-    glDisable(GL_LIGHTING);
+    /*glDisable(GL_LIGHTING);
     glColor3ub(0, 255, 0);
     glBegin(GL_POLYGON);
     glVertex3d(dim.limbot1.x, dim.limbot1.y, 10.2f);
@@ -54,5 +70,14 @@ void Enemigo::dibuja()
     glVertex3d(dim.limtop2.x, dim.limtop2.y, 10.2f);
     glVertex3d(dim.limbot2.x, dim.limbot1.y, 10.2f);
     glEnd();
-    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHTING);*/
+}
+
+void Enemigo::mueve(float t)
+{
+    if (dim.limbot1.x <= xmin)
+        velocidad.x = 2.5f;
+    if (dim.limbot2.x >= xmax)
+        velocidad.x = -2.5f;
+    posicion = posicion + velocidad * t;
 }

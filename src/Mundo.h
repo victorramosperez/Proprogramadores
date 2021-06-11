@@ -8,6 +8,7 @@
 #include "ListaPlataformas.h"
 #include "ListaDisparos.h"
 #include "ListaEnemigos.h"
+#include "ListaObstaculos.h"
 class Mundo
 {
 private:
@@ -20,6 +21,7 @@ private:
 	ListaPlataformas plataformas;
 	ListaDisparos disparos;
 	ListaEnemigos enemigos;
+	ListaObstaculos obstaculos;
 public: 
 	~Mundo();
 	void tecla(unsigned char key);

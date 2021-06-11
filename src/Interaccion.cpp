@@ -174,7 +174,7 @@ bool Interaccion::colision(Hombre &h, Enemigo e)
     return resultado;
 }
 
-bool Interaccion::colision(Obstaculo o, Hombre h)
+bool Interaccion::colision(Hombre& h, Obstaculo o)
 {
     bool resultado = true;
     if (h.dim.limtop1.x >= o.dim.limtop2.x)
@@ -185,9 +185,36 @@ bool Interaccion::colision(Obstaculo o, Hombre h)
         resultado = false;
     else if (h.dim.limtop1.y <= o.dim.limbot1.y)
         resultado = false;
+    //Cayendo
+    if (resultado && h.posicion.y + 0.8 > o.dim.limtop1.y)
+    {
+        h.setPos(h.getPos().x, o.dim.limtop1.y);
+        h.setVel(h.getVel().x, 10.0f);
+        return resultado;
+    }
+    //Saltando
+    if (resultado && h.posicion.y < o.dim.limbot1.y)
+    {
+        h.setPos(h.getPos().x, o.dim.limbot1.y - 2.0f);
+        return resultado;
+    }
+    //hacia la derecha
+    if (resultado && h.posicion.x < o.dim.limtop1.x)
+    {
+        h.setPos(o.dim.limtop1.x - 0.6f, h.getPos().y);
+        h.setVel(-5.0f, h.getVel().y);
+        return resultado;
+    }
+    //hacia la izquierda
+    if (resultado && h.posicion.x > o.dim.limtop2.x)
+    {
+        h.setPos(o.dim.limtop2.x + 0.6f, h.getPos().y);
+        h.setVel(5.0f, h.getVel().y);
+        return resultado;
+    }
     return resultado;
-    
 }
+
 bool Interaccion::colision(Bonus b, Hombre h)
 {
     if (b.getDim().limbot1.x < h.getDim().limbot1.x < b.getDim().limbot2.x

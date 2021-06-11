@@ -8,13 +8,15 @@ class ListaObstaculos
 {
 public:
 	ListaObstaculos();
-	bool agregar(Obstaculo *o);
-	void mueve(float t);
-	void dibuja();
+	virtual ~ListaObstaculos();
+	bool agregar(Obstaculo* o);
 	void destruirContenido();
-	Obstaculo* colision(Hombre& h);
-	Obstaculo* operator [](int i);
+	void dibuja();
+	void colision(Hombre& h);
 	int getNumero() { return numero; }
+	Obstaculo* operator[](int);
+	void eliminar(int);
+	void eliminar(Obstaculo* o);
 
 private:
 	Obstaculo * lista[MAX_OBSTACULOS];

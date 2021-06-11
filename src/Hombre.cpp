@@ -30,7 +30,7 @@ void Hombre::dibuja()
         sprite.setState(1, false);
     sprite.draw();
     glPopMatrix();
-    
+    /*
     glDisable(GL_LIGHTING);
     glColor3ub(0, 255, 0);
     glBegin(GL_POLYGON);
@@ -39,7 +39,7 @@ void Hombre::dibuja()
     glVertex3d(dim.limtop2.x, dim.limtop2.y, 10.2f);
     glVertex3d(dim.limbot2.x, dim.limbot1.y, 10.2f);
     glEnd();
-    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHTING);*/
 }
 
 void Hombre::mueve(float t)

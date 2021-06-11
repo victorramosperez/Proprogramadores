@@ -7,14 +7,18 @@ ListaObstaculos::ListaObstaculos()
 		lista[i] = 0;
 }
 
+ListaObstaculos::~ListaObstaculos()
+{
+}
+
 bool ListaObstaculos::agregar(Obstaculo *o)
 {
-	for (int i = 0; i < numero; i++)
-		if (lista[i] == o)
-			return false;
-
 	if (numero < MAX_OBSTACULOS)
+	{
+		for (int i = 0;i < numero;i++)
+			if (&o == &(lista[i]))return false;
 		lista[numero++] = o; // último puesto sin rellenar
+	}
 	else
 		return false; // capacidad máxima alcanzada
 	return true;
@@ -26,15 +30,6 @@ void ListaObstaculos::dibuja()
 		lista[i]->dibuja();
 }
 
-void ListaObstaculos::mueve(float t)
-{
-	for (int i = 0; i < numero; i++)
-		lista[i]->mueve(t);
-}
-
-
-
-
 void ListaObstaculos::destruirContenido()
 {
 	for (int i = 0; i < numero; i++) // destrucción de Obstaculos contenidas
@@ -42,20 +37,40 @@ void ListaObstaculos::destruirContenido()
 	numero = 0; // inicializa lista
 }
 
-Obstaculo* ListaObstaculos::colision(Hombre& h)
+void ListaObstaculos::colision(Hombre& h)
 {
-	for (int i = 0; i < numero; i++)
+	for (int i = 0;i < numero;i++)
 	{
-		if (Interaccion::colision(*(lista[i]), h))
-			return lista[i];
+		Interaccion::colision(h, *(lista[i]));
+		//h.recibeDano();
 	}
-	return 0; //no hay colisión
 }
 
 Obstaculo* ListaObstaculos::operator [](int i)
 {
-	if (i >= numero)//si me paso, devuelvo la ultima i=numero-1;
-		if (i < 0) //si el indice es negativo, devuelvo la primera 
-			i = 0;
+	if (i >= numero)//si me paso, devuelvo la ultima
+		i = numero - 1;
+	if (i < 0) //si el indice es negativo, devuelvo la primera
+		i = 0;
 	return lista[i];
+}
+
+void ListaObstaculos::eliminar(int index)
+{
+	if ((index < 0) || (index >= numero))
+		return;
+	delete lista[index];
+	numero--;
+	for (int i = index;i < numero;i++)
+		lista[i] = lista[i + 1];
+}
+
+void ListaObstaculos::eliminar(Obstaculo* o)
+{
+	for (int i = 0;i < numero;i++)
+		if (lista[i] == o)
+		{
+			eliminar(i);
+			return;
+		}
 }

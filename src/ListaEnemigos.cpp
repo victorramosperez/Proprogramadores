@@ -51,51 +51,7 @@ void ListaEnemigos::colision(Hombre &h)
 		//h.recibeDano();
 	}
 }
-/*
-void ListaEnemigos::colision(Pared p)
-{
-	for (int i = 0;i < numero;i++)
-	{
-		if (Interaccion::colision(*(lista[i]), p))
-		{
-			delete lista[i];
-			numero--;
-			for (int j = i;j < numero;j++)
-				lista[j] = lista[j + 1];
-		}
 
-	}
-}
-
-void ListaEnemigos::colision(Caja c)
-{
-	for (int i = 0;i < numero;i++)
-	{
-		if (Interaccion::colision(*(lista[i]), c))
-		{
-			delete lista[i];
-			numero--;
-			for (int j = i;j < numero;j++)
-				lista[j] = lista[j + 1];
-		}
-	}
-}
-
-void ListaEnemigos::colision(Plataforma p)
-{
-	for (int i = 0;i < numero;i++)
-	{
-		if (Interaccion::colision(*(lista[i]), p))
-		{
-			delete lista[i];
-			numero--;
-			for (int j = i;j < numero;j++)
-				lista[j] = lista[j + 1];
-		}
-
-	}
-}
-*/
 Enemigo* ListaEnemigos::operator[](int i)
 {
 	if (i >= numero)//si me paso, devuelvo la ultima
