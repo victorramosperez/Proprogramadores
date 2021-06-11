@@ -116,6 +116,22 @@ bool Interaccion::rebote(Hombre& h, Plataforma& p)
 
     return resultado;
 }
+bool Interaccion::colision(Disparo d, Pared p)
+{
+    Vector2D dir;
+    float dif = p.distancia(d.posicion, &dir) - d.radio;
+    if (dif <= 0.0f)
+    {
+        return true;
+    }
+    return false;
+}
+bool Interaccion::colision(Disparo d, Caja c)
+{
+    if (Interaccion::colision(d, c.suelo) || Interaccion::colision(d, c.pared_izq) || Interaccion::colision(d, c.pared_dcha) || Interaccion::colision(d, c.techo))
+        return true;
+    return false;
+}
 bool Interaccion::colision(Obstaculo o, Hombre h)
 {
     if (o.getDim().limbot1.x < h.getDim().limbot1.x < o.getDim().limbot2.x

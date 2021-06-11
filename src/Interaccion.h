@@ -4,6 +4,7 @@
 #include "Caja.h"
 #include "Plataforma.h"
 #include "Enemigo.h"
+#include "Disparo.h"
 class Interaccion
 {
 public:
@@ -15,5 +16,7 @@ public:
 	static bool colision(Enemigo e, Hombre h);
 	static bool rebote(Hombre& h, Caja c);
 	static bool rebote(Hombre& h, Plataforma& p);
+	static bool colision(Disparo d, Pared p);
+	static bool colision(Disparo d, Caja c);
 };
 

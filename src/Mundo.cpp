@@ -183,11 +183,11 @@ void Mundo::dibuja()
 
 	paredes.dibuja();
 	plataformas.dibuja();
-	cajita.dibuja();
+	disparos.dibuja();
+	caja.dibuja();
 	hombre.dibuja();
 	enemigo.dibuja();
 	x_ojo = hombre.getPos().x;
-
 }
 
 bool Mundo::cargarNivel()
@@ -226,9 +226,11 @@ void Mundo::setNivel(int n)
 void Mundo::mueve()
 {
 	hombre.mueve(0.025f);
-	Interaccion::rebote(hombre, cajita);
+	disparos.mueve(0.025f);
+	Interaccion::rebote(hombre, caja);
 	plataformas.rebote(hombre);
 	Interaccion::colision(enemigo, hombre);
+	disparos.colision(caja);
 }
 
 void Mundo::inicializa()
@@ -248,9 +250,29 @@ Mundo::~Mundo()
 
 void Mundo::tecla(unsigned char key)
 {
-	if (key == ' ') //&& Interaccion::rebote(hombre, cajita)
+	if (key == ' ') //&& Interaccion::rebote(hombre, caja)
 	{
 		hombre.setVel(hombre.getVel().x, 14);
+	}
+	if (key == 'm') //&& Interaccion::rebote(hombre, caja)
+	{
+		if (hombre.getVel().x >= 0.00)
+		{
+			Disparo* d = new Disparo();
+			Vector2D pos = hombre.getPos();
+			d->setPos(pos.x, pos.y + 0.7f);
+			disparos.agregar(d);
+			ETSIDI::play("sonidos/disparo.wav");
+		}
+		else
+		{
+			Disparo* d = new Disparo();
+			Vector2D pos = hombre.getPos();
+			d->setPos(pos.x, pos.y + 0.7f);
+			d->setVel(-20.0f, 0.0f);
+			disparos.agregar(d);
+			ETSIDI::play("sonidos/disparo.wav");
+		}
 	}
 }
 

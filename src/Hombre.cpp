@@ -5,10 +5,6 @@ Hombre::Hombre()
 {
     aceleracion.x = 0.0f;
     aceleracion.y = -19.6f;
-   /* dim.limtop1 = (posicion.x-0.25f,posicion.y+0.9f);
-    dim.limtop2=(posicion.x + 0.25f, posicion.y + 0.9f);
-    dim.limbot1=(posicion.x - 0.25f, posicion.y - 0.9f);
-    dim.limbot2=(posicion.x + 0.25f, posicion.y - 0.9f);*/
     sprite.setCenter(1, 0);
     sprite.setSize(2, 2);
     Vida = 1;
