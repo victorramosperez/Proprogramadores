@@ -54,41 +54,11 @@ bool Interaccion::rebote(Hombre& h, Plataforma& p)
     resultado=false;
     else if (h.dim.limtop1.y <= p.dim.limbot1.y)
     resultado=false;
-    
-    /*
-    bool resultado = false;
-    if (p.getDim().limbot1.x < h.getDim().limbot1.x < p.getDim().limbot2.x
-        && p.getDim().limbot1.y < h.getDim().limbot1.y < p.getDim().limtop1.y)
-    {
-        //h.setVel(0, h.getVel().y);
-        resultado = true;
-    }
-    else if (p.getDim().limbot1.x < h.getDim().limbot2.x < p.getDim().limbot2.x
-        && p.getDim().limbot1.y < h.getDim().limbot2.y < p.getDim().limtop1.y)
-    {
-        //h.setVel(0, h.getVel().y);
-        resultado = true;
-    }
-    else if (p.getDim().limbot1.x < h.getDim().limtop1.x < p.getDim().limbot2.x
-        && p.getDim().limbot1.y < h.getDim().limtop1.y < p.getDim().limtop1.y)
-    {
-        //h.setVel(h.getVel().x, 0);
-        resultado = true;
-    }
-    else if (p.getDim().limbot1.x < h.getDim().limtop2.x < p.getDim().limbot2.x
-        && p.getDim().limbot1.y < h.getDim().limtop2.y < p.getDim().limtop1.y)
-    {
-        //h.setVel(h.getVel().x, 0);
-        resultado = true;
-    }
-    else resultado = false;
-    //return false;
-   */
 
     //Cayendo
-    if (resultado && h.posicion.y > p.dim.limtop1.y)
+    if (resultado && h.posicion.y+0.8 > p.dim.limtop1.y)
     {
-        h.setPos(h.getPos().x, p.dim.limtop1.y + 0.3f);
+        h.setPos(h.getPos().x, p.dim.limtop1.y );
         h.setVel(h.getVel().x, 0.0f);
         return resultado;
     }

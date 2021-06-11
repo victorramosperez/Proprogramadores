@@ -1,7 +1,3 @@
-﻿  Coordinador.cpp
-  ListaDisparos.cpp
-  Mundo.cpp
+﻿  Mundo.cpp
 C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(25,50): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-  Pang.cpp
-  Generando código...
   Pang.vcxproj -> C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\bin\Pang.exe

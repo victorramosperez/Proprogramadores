@@ -252,11 +252,7 @@ Mundo::~Mundo()
 
 void Mundo::tecla(unsigned char key)
 {
-	if (key == ' ') //&& Interaccion::rebote(hombre, caja)
-	{
-		hombre.setVel(hombre.getVel().x, 14);
-	}
-	if (key == 'm') 
+	if (key == ' ') 
 	{
 		if (hombre.getVel().x >= 0.00)
 		{
@@ -290,6 +286,9 @@ void Mundo::teclaEspecial(unsigned char key)
 	case GLUT_KEY_RIGHT:
 		hombre.setVel(5.0f, hombre.getVel().y);
 		//hombre.setPos(hombre.getPos().x + 0.2f, hombre.getPos().y);
+		break;
+	case GLUT_KEY_UP: //&& Interaccion::rebote(hombre, caja)
+		hombre.setVel(hombre.getVel().x, 14);
 		break;
 	}
 }
