@@ -19,7 +19,7 @@ public:
     void setDireccion(int ndir) { Direccion = ndir; }
     int getDireccion() { return Direccion; }
     
-    SpriteSequence sprite{ "imagenes/zoomer.png", 5 };
+    SpriteSequence sprite{ "imagenes/enemigo5.png", 1 };
     friend class Interaccion;
     
 };

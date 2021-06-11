@@ -122,19 +122,17 @@ bool Interaccion::colision(Disparo d, Plataforma p)
 
 bool Interaccion::colision(Obstaculo o, Hombre h)
 {
-    if (o.getDim().limbot1.x < h.getDim().limbot1.x < o.getDim().limbot2.x
-        && o.getDim().limbot1.y < h.getDim().limbot1.y < o.getDim().limtop1.y)
-        return true;
-    if (o.getDim().limbot1.x < h.getDim().limbot2.x < o.getDim().limbot2.x
-        && o.getDim().limbot1.y < h.getDim().limbot2.y < o.getDim().limtop1.y)
-        return true;
-    if (o.getDim().limbot1.x < h.getDim().limtop1.x < o.getDim().limbot2.x
-        && o.getDim().limbot1.y < h.getDim().limtop1.y < o.getDim().limtop1.y)
-        return true;
-    if (o.getDim().limbot1.x < h.getDim().limtop2.x < o.getDim().limbot2.x
-        && o.getDim().limbot1.y < h.getDim().limtop2.y < o.getDim().limtop1.y)
-        return true;
-    return false;
+    bool resultado = true;
+    if (h.dim.limtop1.x >= o.dim.limtop2.x)
+        resultado = false;
+    else if (h.dim.limtop2.x <= o.dim.limtop1.x)
+        resultado = false;
+    else if (h.dim.limbot1.y >= o.dim.limtop1.y)
+        resultado = false;
+    else if (h.dim.limtop1.y <= o.dim.limbot1.y)
+        resultado = false;
+    return resultado;
+    
 }
 bool Interaccion::colision(Bonus b, Hombre h)
 {

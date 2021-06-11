@@ -24,7 +24,7 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 	ETSIDI::printxy("Dibujo en el mundo::dibuja()", 3.5, 19);
 	
-/* MAPA 1:
+ //MAPA 1:
 	Plataforma* aux = new Plataforma(1, 4, 2, 5);
 	plataformas.agregar(aux);
 	Plataforma* aux2 = new Plataforma(4, 4, 9, 5);
@@ -65,7 +65,7 @@ void Mundo::dibuja()
 	plataformas.agregar(aux19);
 	Plataforma* aux20 = new Plataforma(72, 3, 73, 4);
 	plataformas.agregar(aux20);
-*/
+
 
 /*	//MAPA 2:
 	Plataforma* aux21 = new Plataforma(1, 4, 4, 5);
@@ -173,12 +173,12 @@ void Mundo::dibuja()
 	Plataforma* aux70 = new Plataforma(0, 12, 80, 13);
 	plataformas.agregar(aux70);
 	*/
-
+	/*
 	Plataforma* aux = new Plataforma(0, 3, 80, 4);
 	plataformas.agregar(aux);
 	Plataforma* aux2 = new Plataforma(-5, 0, -4, 4);
 	plataformas.agregar(aux2);
-
+	*/
 
 
 	paredes.dibuja();
