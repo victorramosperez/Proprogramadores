@@ -17,12 +17,14 @@ bool Interaccion::rebote(Hombre& h, Caja c)
     {
         h.posicion.x = xmax;
         h.posicion.y = ymin;
+        h.velocidad.y = 0.0f;
         return true;
     }
     if (h.posicion.x < xmin && h.posicion.y < ymin)
     {
         h.posicion.x = xmin;
         h.posicion.y = ymin;
+        h.velocidad.y = 0.0f;
         return true;
     }
     if (h.posicion.x > xmax)
@@ -38,6 +40,7 @@ bool Interaccion::rebote(Hombre& h, Caja c)
     if (h.posicion.y < ymin)
     {
         h.posicion.y = ymin;
+        h.velocidad.y = 0.0f;
         return true;
     }
     return false;
@@ -56,7 +59,7 @@ bool Interaccion::rebote(Hombre& h, Plataforma& p)
     resultado=false;
 
     //Cayendo
-    if (resultado && h.posicion.y+0.8 > p.dim.limtop1.y)
+    if (resultado && h.posicion.y+0.8 > p.dim.limtop1.y && h.velocidad.y<=0.0f)
     {
         h.setPos(h.getPos().x, p.dim.limtop1.y );
         h.setVel(h.getVel().x, 0.0f);

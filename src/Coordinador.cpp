@@ -66,10 +66,10 @@ void Coordinador::mueve()
 			if (!mundo.cargarNivel())
 				estado = FIN;
 		}
-		/*if ()
+		if (!mundo.hombre.getVida())
 		{
 			estado = GAMEOVER;
-		}*/
+		}
 	}
 
 }

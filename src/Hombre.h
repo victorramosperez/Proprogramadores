@@ -14,9 +14,8 @@ protected:
     float altura = 1.8f;
     float anchura = 0.5f;
     Dimensiones dim;
-    int vida;
+    int vida=1;
     bool vivo;
-
 public:
     Hombre();
     ~Hombre();
@@ -28,8 +27,10 @@ public:
     Vector2D getVel();
     Vector2D getPos();
     Dimensiones getDim();
+    int getVida() { return vida; }
+    void setVida(int v) { vida = v; }
     //bool cogerBonus(Bonus b);
-    //bool recibeDano(Obstaculo o);
-    SpriteSequence sprite{ "imagenes/samus2.png", 3 };
+    void recibeDano();
+    SpriteSequence sprite{ "imagenes/samus.png", 3 };
     friend class Interaccion;
 };

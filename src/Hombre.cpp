@@ -93,6 +93,10 @@ Dimensiones Hombre::getDim()
 {
     return dim;
 }
+void Hombre::recibeDano()
+{
+    vida--;
+}
 /*
 bool Hombre::cogerBonus(Bonus b)
 {

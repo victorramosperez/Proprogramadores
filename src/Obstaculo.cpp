@@ -3,7 +3,6 @@
 
 Obstaculo::Obstaculo()
 {
-	posicion={ 0,0 };
 	dim.limbot1 = { 0,0 };
 	dim.limbot2 = { 0,0 };
 	dim.limtop1 = { 0,0 };
@@ -15,7 +14,6 @@ Obstaculo::Obstaculo()
 
 Obstaculo::Obstaculo(float xmin, float ymin, float xmax, float ymax)
 {
-	posicion = { 0,0 };
 	dim.limbot1 = { xmin,ymin };
 	dim.limbot2 = { xmax,ymin };
 	dim.limtop1 = { xmin,ymax };
@@ -38,7 +36,7 @@ void Obstaculo::dibuja() {
 	glEnable(GL_LIGHTING);*/
 
 	glPushMatrix();
-	glTranslatef(posicion.x, posicion.y, 10);
+	glTranslatef(dim.limbot1.x, dim.limbot1.y, 10);
 	glColor3f(1.0f, 0.0f, 0.0f);
 	sprite.draw();
 	glPopMatrix();
@@ -59,18 +57,7 @@ void Obstaculo::dibuja() {
 }
 
 
-void Obstaculo::setPos(float posx, float posy)
-{
-	posicion.x = posx;
-	posicion.y = posy;
-}
-
 Dimensiones Obstaculo::getDim()
 {
 	return dim;
-}
-
-Vector2D Obstaculo::getPos()
-{
-	return posicion;
 }

@@ -47,7 +47,7 @@ bool Mundo::cargarNivel()
 	
 	if (nivel == 1)
 	{
-
+		/*
 		Plataforma* aux = new Plataforma(1, 4, 4, 5);
 		plataformas.agregar(aux);
 		Plataforma* aux2 = new Plataforma(6, 8, 9, 9);
@@ -77,7 +77,15 @@ bool Mundo::cargarNivel()
 		Plataforma* aux14 = new Plataforma(64, 4, 66, 5);
 		plataformas.agregar(aux14);
 		Plataforma* aux15 = new Plataforma(71, 0, 72, 5);
-		plataformas.agregar(aux15);
+		plataformas.agregar(aux15);*/
+		Plataforma* aux150 = new Plataforma(5.0, 3.0, 72, 4.0);
+		plataformas.agregar(aux150);
+		//ENEMIGOS
+		Enemigo* aux64 = new Enemigo(1.0f, 10.0f, -1.0f, 10.0f);
+		enemigos.agregar(aux64);
+		//OBSTACULOS
+		Obstaculo* aux88 = new Obstaculo(5.0f, 0.0f, 10.0f, 1.0f);
+		obstaculos.agregar(aux88);
 	}
 	if (nivel == 2)
 	{
@@ -191,25 +199,6 @@ void Mundo::mueve()
 			}
 		}
 	}
-	/*for (int i = 0;i < enemigos.getNumero();i++)
-	{
-		if (Interaccion::colision(hombre, *enemigos[i]))
-		{
-			hombre.setVel(hombre.getVel().x, 3);
-			if (hombre.getVel().x >= 0.0f)
-			{
-				hombre.setPos(enemigos[i]->getDim().limtop1.x-0.5f, enemigos[i]->getDim().limtop1.y);
-				hombre.setVel(-3.0f, hombre.getVel().y);
-			}
-			else
-			{
-				hombre.setPos(enemigos[i]->getDim().limtop2.x+0.5f, enemigos[i]->getDim().limtop2.y);
-				hombre.setVel(3.0f, hombre.getVel().y);
-			}
-		}
-			
-
-	}*/
 	enemigos.colision(hombre);
 	obstaculos.colision(hombre);
 }
@@ -223,6 +212,7 @@ void Mundo::inicializa()
 	//cargarNivel();
 	hombre.setPos(-7.0f, 0.0f);
 	hombre.setVel(0.0f, 0.0f);
+	hombre.setVida(1);
 	Enemigo* aux64 = new Enemigo(1.0f,10.0f,-1.0f,10.0f);
 	enemigos.agregar(aux64);
 	Obstaculo* aux88 = new Obstaculo(0.0f,0.0f,5.0f,1.0f);
@@ -271,7 +261,10 @@ void Mundo::teclaEspecial(unsigned char key)
 		//hombre.setPos(hombre.getPos().x + 0.2f, hombre.getPos().y);
 		break;
 	case GLUT_KEY_UP: //&& Interaccion::rebote(hombre, caja)
-		hombre.setVel(hombre.getVel().x, 14);
+		if (hombre.getVel().y>=-0.5f && hombre.getVel().y <= 0.1f)
+		{
+			hombre.setVel(hombre.getVel().x, 14);
+		}
 		break;
 	}
 }

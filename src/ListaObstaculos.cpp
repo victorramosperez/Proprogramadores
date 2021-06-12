@@ -41,8 +41,8 @@ void ListaObstaculos::colision(Hombre& h)
 {
 	for (int i = 0;i < numero;i++)
 	{
-		Interaccion::colision(h, *(lista[i]));
-		//h.recibeDano();
+		if(Interaccion::colision(h, *(lista[i])))
+			h.recibeDano();
 	}
 }
 

@@ -35,10 +35,9 @@ Enemigo::~Enemigo()
 
 void Enemigo::dibuja()
 {
-	glPushMatrix();
+    glPushMatrix();
     glTranslatef(posicion.x, posicion.y, 10);
     glColor3f(1.0f, 0.0f, 0.0f);
-    //glutSolidSphere(Altura, 20, 20);
     //gestion de direccion y animacion
     if (velocidad.x > 0.01)sprite.flip(false, false);
     if (velocidad.x < -0.01)sprite.flip(true, false);
