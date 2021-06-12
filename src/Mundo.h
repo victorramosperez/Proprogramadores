@@ -13,6 +13,7 @@
 #include "BonusDisparo.h"
 #include "BonusLlave.h"
 #include "PlataformaPuerta.h"
+#include "EnemigoBoss.h"
 class Mundo
 {
 private:

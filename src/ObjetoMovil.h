@@ -14,6 +14,7 @@ public:
 	void setPos(Vector2D pos);
 	void setVel(float vx, float vy);
 	Vector2D getPos();
+	Vector2D getVel() { return velocidad; }
 	Dimensiones getDim();
 	void setDim(Dimensiones d);
 };

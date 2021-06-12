@@ -47,7 +47,10 @@ void ListaEnemigos::colision(Hombre &h)
 {
 	for (int i = 0;i < numero;i++)
 	{
-		if(Interaccion::colision(h, *(lista[i])))
+		if ((*lista[i]).getBoss()) {
+			lista[i]->setVel(h.getPos().x - lista[i]->getPos().x, lista[i]->getVel().y);
+		}
+		if (Interaccion::colision(h, *(lista[i])))
 			h.recibeDano();
 	}
 }

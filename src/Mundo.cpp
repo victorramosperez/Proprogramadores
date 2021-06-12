@@ -179,7 +179,13 @@ bool Mundo::cargarNivel()
 		Plataforma* aux50 = new Plataforma(0, 12, 80, 13);
 		plataformas.agregar(aux50);
 	}
-	if (nivel <= 3)
+	if (nivel == 4)
+	{
+		EnemigoBoss* aux666 = new EnemigoBoss(10.0f, 0.0f, -100.0f, 100.0f);
+		aux666->setBoss(true);
+		enemigos.agregar(aux666);
+	}
+	if (nivel <= 4)
 		return true;
 	return false;
 }
@@ -234,7 +240,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	setNivel(0);
+	setNivel(3);
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;

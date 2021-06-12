@@ -13,18 +13,19 @@ protected:
     float Altura;
     float xmax;
     float xmin;
+    bool boss = false;
 public:
     Enemigo();
-    Enemigo(float ix, float iy, float ixmax, float ixmin);
+    Enemigo(float ix, float iy, float ixmin, float ixmax);
     ~Enemigo();
     void dibuja();
-    void mueve(float t);
+    virtual void mueve(float t);
     void setDireccion(int ndir) { Direccion = ndir; }
     int getDireccion() { return Direccion; }
-    
+    void setBoss(bool b) { boss = b; }
+    bool getBoss() { return boss; }
     SpriteSequence sprite{ "imagenes/enemigo8.png", 3 };
     friend class Interaccion;
-    
 };
 
 class EnemigoSimple : public Enemigo { 

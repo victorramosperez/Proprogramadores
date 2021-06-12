@@ -17,7 +17,7 @@ Enemigo::Enemigo(float ix, float iy, float ixmin, float ixmax)
     Direccion = 0;
     Vivo = true;
     Vida = 1;
-    velocidad.x = 2.5f;
+    //velocidad.x = 2.5f;
     aceleracion.x = aceleracion.y = 0;
     Altura = 1.8f;
     posicion.x = ix;
