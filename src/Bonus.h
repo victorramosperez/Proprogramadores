@@ -8,14 +8,13 @@ class Bonus
 protected:
     float lado;
     Vector2D posicion;
-    Vector2D velocidad;
-    Vector2D aceleracion;
     Dimensiones dim;
 public:
     Bonus();
+    Bonus(float ix, float iy);
     ~Bonus();
     void dibuja();
-    void mueve(float t);
     void setPos(float ix, float iy);
     Dimensiones getDim();
+    friend class Interaccion;
 };

@@ -218,37 +218,17 @@ bool Interaccion::colision(Hombre& h, Obstaculo o)
     return resultado;
 }
 
-bool Interaccion::colision(Bonus b, Hombre h)
+bool Interaccion::colision(Hombre& h, Bonus b)
 {
-    if (b.getDim().limbot1.x < h.getDim().limbot1.x < b.getDim().limbot2.x
-        && b.getDim().limbot1.y < h.getDim().limbot1.y < b.getDim().limtop1.y)
-        return true;
-    if (b.getDim().limbot1.x < h.getDim().limbot2.x < b.getDim().limbot2.x
-        && b.getDim().limbot1.y < h.getDim().limbot2.y < b.getDim().limtop1.y)
-        return true;
-    if (b.getDim().limbot1.x < h.getDim().limtop1.x < b.getDim().limbot2.x
-        && b.getDim().limbot1.y < h.getDim().limtop1.y < b.getDim().limtop1.y)
-        return true;
-    if (b.getDim().limbot1.x < h.getDim().limtop2.x < b.getDim().limbot2.x
-        && b.getDim().limbot1.y < h.getDim().limtop2.y < b.getDim().limtop1.y)
-        return true;
-    return false;
+    bool resultado = true;
+    if (h.dim.limtop1.x >= b.dim.limtop2.x)
+        resultado = false;
+    else if (h.dim.limtop2.x <= b.dim.limtop1.x)
+        resultado = false;
+    else if (h.dim.limbot1.y >= b.dim.limtop1.y)
+        resultado = false;
+    else if (h.dim.limtop1.y <= b.dim.limbot1.y)
+        resultado = false;
+    return resultado;
 }
 
-bool Interaccion::colision(Enemigo e, Hombre h)
-{
-
-    if (e.getDim().limbot1.x < h.getDim().limbot1.x < e.getDim().limbot2.x
-        && e.getDim().limbot1.y < h.getDim().limbot1.y < e.getDim().limtop1.y)
-        return true;
-    if (e.getDim().limbot1.x < h.getDim().limbot2.x < e.getDim().limbot2.x
-        && e.getDim().limbot1.y < h.getDim().limbot2.y < e.getDim().limtop1.y)
-        return true;
-    if (e.getDim().limbot1.x < h.getDim().limtop1.x < e.getDim().limbot2.x
-        && e.getDim().limbot1.y < h.getDim().limtop1.y < e.getDim().limtop1.y)
-        return true;
-    if (e.getDim().limbot1.x < h.getDim().limtop2.x < e.getDim().limbot2.x
-        && e.getDim().limbot1.y < h.getDim().limtop2.y < e.getDim().limtop1.y)
-        return true;
-    return false;
-}

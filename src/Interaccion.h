@@ -11,8 +11,6 @@ public:
 	Interaccion();
 	~Interaccion();
 
-	static bool colision(Bonus b, Hombre h);
-	static bool colision(Enemigo e, Hombre h);
 	static bool rebote(Hombre& h, Caja c);
 	static bool rebote(Hombre& h, Plataforma& p);
 	static bool colision(Disparo d, Pared p);
@@ -21,5 +19,6 @@ public:
 	static bool colision(Disparo d, Enemigo p);
 	static bool colision(Hombre& h, Enemigo e);
 	static bool colision(Hombre& h, Obstaculo o);
+	static bool colision(Hombre& h, Bonus b);
 };
 

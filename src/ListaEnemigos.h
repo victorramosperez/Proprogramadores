@@ -1,6 +1,5 @@
 #pragma once
 #define MAX_ENEMIGOS 100
-#include "Caja.h"
 #include "Interaccion.h"
 #include "Enemigo.h"
 class ListaEnemigos

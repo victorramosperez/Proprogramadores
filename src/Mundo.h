@@ -1,7 +1,6 @@
 #pragma once
 #include "Pared.h"
 #include "Caja.h"
-#include "ListaParedes.h"
 #include "Interaccion.h"
 #include "Enemigo.h"
 #include "Plataforma.h"
@@ -9,6 +8,7 @@
 #include "ListaDisparos.h"
 #include "ListaEnemigos.h"
 #include "ListaObstaculos.h"
+#include "ListaBonus.h"
 class Mundo
 {
 private:
@@ -22,6 +22,7 @@ private:
 	ListaDisparos disparos;
 	ListaEnemigos enemigos;
 	ListaObstaculos obstaculos;
+	ListaBonus bonus;
 public: 
 	~Mundo();
 	void tecla(unsigned char key);
@@ -32,7 +33,6 @@ public:
 	void dibuja();
 	bool cargarNivel();
 	void setNivel(int);
-	ListaParedes paredes;
 	int nivel;
 	friend class Coordinador;
 };

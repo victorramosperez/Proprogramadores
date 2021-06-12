@@ -74,29 +74,8 @@ void Hombre::setVel(float vx, float vy)
     velocidad.y = vy;
 }
 
-float Hombre::getAltura()
-{
-    return altura;
-}
 
-Vector2D Hombre::getVel()
-{
-    return velocidad;
-}
 
-Vector2D Hombre::getPos()
-{
-    return posicion;
-}
-
-Dimensiones Hombre::getDim()
-{
-    return dim;
-}
-void Hombre::recibeDano()
-{
-    vida--;
-}
 /*
 bool Hombre::cogerBonus(Bonus b)
 {

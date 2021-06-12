@@ -24,14 +24,13 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 	ETSIDI::printxy("Pulse espacio para disparar", 3.5, 19);
 
-
-	paredes.dibuja();
 	plataformas.dibuja();
 	disparos.dibuja();
 	enemigos.dibuja();
 	obstaculos.dibuja();
 	caja.dibuja();
 	hombre.dibuja();
+	bonus.dibuja();
 	x_ojo = hombre.getPos().x;
 
 }
@@ -47,7 +46,7 @@ bool Mundo::cargarNivel()
 	
 	if (nivel == 1)
 	{
-		/*
+		
 		Plataforma* aux = new Plataforma(1, 4, 4, 5);
 		plataformas.agregar(aux);
 		Plataforma* aux2 = new Plataforma(6, 8, 9, 9);
@@ -77,15 +76,16 @@ bool Mundo::cargarNivel()
 		Plataforma* aux14 = new Plataforma(64, 4, 66, 5);
 		plataformas.agregar(aux14);
 		Plataforma* aux15 = new Plataforma(71, 0, 72, 5);
-		plataformas.agregar(aux15);*/
-		Plataforma* aux150 = new Plataforma(5.0, 3.0, 72, 4.0);
-		plataformas.agregar(aux150);
+		plataformas.agregar(aux15);
 		//ENEMIGOS
 		Enemigo* aux64 = new Enemigo(1.0f, 10.0f, -1.0f, 10.0f);
 		enemigos.agregar(aux64);
 		//OBSTACULOS
 		Obstaculo* aux88 = new Obstaculo(5.0f, 0.0f, 10.0f, 1.0f);
 		obstaculos.agregar(aux88);
+
+		Bonus* aux640 = new Bonus(2.0f,10.0f);
+		bonus.agregar(aux640);
 	}
 	if (nivel == 2)
 	{
@@ -201,6 +201,7 @@ void Mundo::mueve()
 	}
 	enemigos.colision(hombre);
 	obstaculos.colision(hombre);
+	bonus.colision(hombre);
 }
 
 void Mundo::inicializa()

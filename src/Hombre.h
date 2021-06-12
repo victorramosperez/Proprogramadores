@@ -23,14 +23,14 @@ public:
     void mueve(float t);
     void setVel(float vx, float vy);
     void setPos(float ix, float iy);
-    float getAltura();
-    Vector2D getVel();
-    Vector2D getPos();
-    Dimensiones getDim();
+    Vector2D getVel() { return velocidad; }
+    Vector2D getPos() { return posicion; }
+    Dimensiones getDim() { return dim; }
     int getVida() { return vida; }
     void setVida(int v) { vida = v; }
     //bool cogerBonus(Bonus b);
-    void recibeDano();
+    void recibeDano() { vida--; }
+    void recibeVida() { vida++; }
     SpriteSequence sprite{ "imagenes/samus.png", 3 };
     friend class Interaccion;
 };
