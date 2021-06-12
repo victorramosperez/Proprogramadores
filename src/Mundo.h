@@ -11,6 +11,8 @@
 #include "ListaBonus.h"
 #include "BonusVida.h"
 #include "BonusDisparo.h"
+#include "BonusLlave.h"
+#include "PlataformaPuerta.h"
 class Mundo
 {
 private:

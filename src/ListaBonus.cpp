@@ -44,8 +44,10 @@ void ListaBonus::colision(Hombre& h)
 	{
 		if (Interaccion::colision(h, *(lista[i])))
 		{
-			if ((*lista[i]).identificador)
+			if ((*lista[i]).identificador == 1)
 				h.recibeVida();
+			else if ((*lista[i]).identificador == 2)h.setDispEspecial(true);
+			else h.setLlave(true);
 			delete lista[i];
 			numero--;
 			for (int j = i;j < numero;j++)

@@ -52,14 +52,14 @@ bool Mundo::cargarNivel()
 	plataformas.destruirContenido();
 	obstaculos.destruirContenido();
 	bonus.destruirContenido();
-	puntos = 0;
+	hombre.setLlave(false);
 	
 	if (nivel == 1)
 	{
 		
 		Plataforma* aux = new Plataforma(1, 3, 4, 4);
 		plataformas.agregar(aux);
-		Plataforma* aux2 = new Plataforma(6, 8, 9, 9);
+		Plataforma* aux2 = new Plataforma(6, 7, 9, 8);
 		plataformas.agregar(aux2);
 		Plataforma* aux3 = new Plataforma(12, 0, 14, 3);
 		plataformas.agregar(aux3);
@@ -88,11 +88,17 @@ bool Mundo::cargarNivel()
 		Plataforma* aux15 = new Plataforma(71, 0, 72, 5);
 		plataformas.agregar(aux15);
 		//ENEMIGOS
-		Enemigo* aux64 = new Enemigo(1.0f, 10.0f, -1.0f, 10.0f);
+		Enemigo* aux64 = new Enemigo(20.0f, 10.0f, -21.0f, 30.0f);
 		enemigos.agregar(aux64);
 		//OBSTACULOS
 		Obstaculo* aux88 = new Obstaculo(5.0f, 0.0f, 10.0f, 1.0f);
 		obstaculos.agregar(aux88);
+		//LLAVE
+		BonusLlave* aux420 = new BonusLlave(0.0f,10.0f);
+		bonus.agregar(aux420);
+		//PUERTA
+		PlataformaPuerta* aux150 = new PlataformaPuerta(77.0f, 0.0f,79.0f, 3.0f);
+		plataformas.agregar(aux150);
 	}
 	if (nivel == 2)
 	{
@@ -232,7 +238,6 @@ void Mundo::inicializa()
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;
-	//cargarNivel();
 	hombre.setPos(-7.0f, 0.0f);
 	hombre.setVel(0.0f, 0.0f);
 	hombre.setVida(1);
@@ -241,6 +246,7 @@ void Mundo::inicializa()
 	enemigos.agregar(aux64);
 	Obstaculo* aux88 = new Obstaculo(0.0f,0.0f,5.0f,1.0f);
 	obstaculos.agregar(aux88);
+	puntos = 0;
 }
 
 Mundo::~Mundo()

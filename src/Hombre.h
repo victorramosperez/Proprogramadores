@@ -16,6 +16,7 @@ protected:
     Dimensiones dim;
     int vida=1;
     bool dispEspecial=false;
+    bool llave = false;
     bool vivo;
 public:
     Hombre();
@@ -31,7 +32,8 @@ public:
     bool getDispEspecial() { return dispEspecial; }
     void setDispEspecial(bool b) { dispEspecial = b; }
     void setVida(int v) { vida = v; }
-    //bool cogerBonus(Bonus b);
+    void setLlave(bool b) { llave = b; }
+    bool getLlave() { return llave; }
     void recibeDano() { vida--; }
     void recibeVida() { vida++; }
     SpriteSequence sprite{ "imagenes/samus.png", 3 };

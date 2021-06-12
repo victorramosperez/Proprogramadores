@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\BonusDisparo.cpp" />
+    <ClCompile Include="src\BonusLlave.cpp" />
     <ClCompile Include="src\BonusVida.cpp" />
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
@@ -43,11 +44,13 @@
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Plataforma.cpp" />
+    <ClCompile Include="src\PlataformaPuerta.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\BonusDisparo.h" />
+    <ClInclude Include="src\BonusLlave.h" />
     <ClInclude Include="src\BonusVida.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\ColorRGB.h" />
@@ -70,6 +73,7 @@
     <ClInclude Include="src\ObstaculoTiempo.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Plataforma.h" />
+    <ClInclude Include="src\PlataformaPuerta.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

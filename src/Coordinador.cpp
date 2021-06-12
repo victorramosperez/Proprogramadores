@@ -61,7 +61,7 @@ void Coordinador::mueve()
 	if (estado == JUEGO)
 	{
 		mundo.mueve();
-		if (mundo.hombre.getPos().x >= 78.0f)
+		if (mundo.hombre.getPos().x >= 76.5f && mundo.hombre.getLlave())
 		{
 			if (!mundo.cargarNivel())
 				estado = FIN;
