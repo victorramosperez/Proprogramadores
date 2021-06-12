@@ -34,4 +34,5 @@ public:
 	void setNivel(int);
 	ListaParedes paredes;
 	int nivel;
+	friend class Coordinador;
 };

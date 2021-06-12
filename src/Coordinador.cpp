@@ -29,24 +29,6 @@ void Coordinador::tecla(unsigned char key)
 			estado = JUEGO;
 		}
 
-		if (key == '2')
-		{
-			mundo.nivel = 1;
-			mundo.inicializa();
-			
-			mundo.cargarNivel();
-			estado = JUEGO;
-		}
-
-		if (key == '3')
-		{
-			mundo.nivel = 2;
-			mundo.inicializa();
-			
-			mundo.cargarNivel();
-			estado = JUEGO;
-		}
-
 		if (key == 's')
 			exit(0);
 	}
@@ -79,13 +61,12 @@ void Coordinador::mueve()
 	if (estado == JUEGO)
 	{
 		mundo.mueve();
-		/*mundo.mueve();
-		if (mundo.getNumEsferas() == 0)
+		if (mundo.hombre.getPos().x >= 78.0f)
 		{
 			if (!mundo.cargarNivel())
 				estado = FIN;
 		}
-		if (mundo.getImpacto())
+		/*if ()
 		{
 			estado = GAMEOVER;
 		}*/
