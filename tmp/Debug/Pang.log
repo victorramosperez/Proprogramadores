@@ -1,3 +1,6 @@
-﻿  Bonus.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Bonus.cpp(30,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+﻿  Mundo.cpp
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(31,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(32,53): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(33,46): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(34,51): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   Pang.vcxproj -> C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\bin\Pang.exe

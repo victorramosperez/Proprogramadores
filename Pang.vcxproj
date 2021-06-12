@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Bonus.cpp" />
+    <ClCompile Include="src\BonusDisparo.cpp" />
+    <ClCompile Include="src\BonusVida.cpp" />
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Dimensiones.cpp" />
@@ -45,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Bonus.h" />
+    <ClInclude Include="src\BonusDisparo.h" />
+    <ClInclude Include="src\BonusVida.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\ColorRGB.h" />
     <ClInclude Include="src\Coordinador.h" />

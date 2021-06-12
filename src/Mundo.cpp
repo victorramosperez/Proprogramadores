@@ -2,6 +2,9 @@
 #include "freeglut.h"
 #include <math.h>
 #include "ETSIDI.h"
+#include <string>
+using namespace std;
+
 void Mundo::rotarOjo()
 {
 	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
@@ -21,8 +24,14 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 	ETSIDI::printxy("Pulse -P- para pausar", -11, 19);
 	ETSIDI::setTextColor(1, 1, 1);
+	
+	string spuntos = to_string(puntos);
+	string svida = to_string(hombre.getVida());
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-	ETSIDI::printxy("Pulse espacio para disparar", 3.5, 19);
+	ETSIDI::printxy("Puntos: ", hombre.getPos().x + 5, 19);
+	ETSIDI::printxy(spuntos.c_str(), hombre.getPos().x + 8, 19);
+	ETSIDI::printxy("Vida: ", hombre.getPos().x + 5, 17);
+	ETSIDI::printxy(svida.c_str(), hombre.getPos().x + 7, 17);
 
 	plataformas.dibuja();
 	disparos.dibuja();
@@ -32,7 +41,6 @@ void Mundo::dibuja()
 	hombre.dibuja();
 	bonus.dibuja();
 	x_ojo = hombre.getPos().x;
-
 }
 
 bool Mundo::cargarNivel()
@@ -43,11 +51,13 @@ bool Mundo::cargarNivel()
 	enemigos.destruirContenido();
 	plataformas.destruirContenido();
 	obstaculos.destruirContenido();
+	bonus.destruirContenido();
+	puntos = 0;
 	
 	if (nivel == 1)
 	{
 		
-		Plataforma* aux = new Plataforma(1, 4, 4, 5);
+		Plataforma* aux = new Plataforma(1, 3, 4, 4);
 		plataformas.agregar(aux);
 		Plataforma* aux2 = new Plataforma(6, 8, 9, 9);
 		plataformas.agregar(aux2);
@@ -83,9 +93,6 @@ bool Mundo::cargarNivel()
 		//OBSTACULOS
 		Obstaculo* aux88 = new Obstaculo(5.0f, 0.0f, 10.0f, 1.0f);
 		obstaculos.agregar(aux88);
-
-		Bonus* aux640 = new Bonus(2.0f,10.0f);
-		bonus.agregar(aux640);
 	}
 	if (nivel == 2)
 	{
@@ -193,9 +200,23 @@ void Mundo::mueve()
 		{
 			if (Interaccion::colision(*disparos[j], *enemigos[i]))
 			{
+				int valor = ETSIDI::lanzaDado(10);
+				switch (valor)
+				{
+				case 1:
+					{
+					BonusVida* aux640 = new BonusVida(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+					bonus.agregar(aux640);
+					break;
+					}
+				case 2:
+					BonusDisparo * aux641 = new BonusDisparo(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+					bonus.agregar(aux641);
+					break;
+				}
 				enemigos.eliminar(enemigos[i]);
 				disparos.eliminar(disparos[j]);
-				//puntos += 100;
+				puntos += 100;
 			}
 		}
 	}

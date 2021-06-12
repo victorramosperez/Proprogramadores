@@ -9,6 +9,8 @@
 #include "ListaEnemigos.h"
 #include "ListaObstaculos.h"
 #include "ListaBonus.h"
+#include "BonusVida.h"
+#include "BonusDisparo.h"
 class Mundo
 {
 private:
@@ -23,6 +25,7 @@ private:
 	ListaEnemigos enemigos;
 	ListaObstaculos obstaculos;
 	ListaBonus bonus;
+	int puntos = 0;
 public: 
 	~Mundo();
 	void tecla(unsigned char key);
