@@ -200,12 +200,13 @@ void Mundo::mueve()
 		{
 			if (Interaccion::colision(*disparos[j], *enemigos[i]))
 			{
-				int valor = ETSIDI::lanzaDado(10);
+				int valor = ETSIDI::lanzaDado(3);
 				switch (valor)
 				{
 				case 1:
 					{
 					BonusVida* aux640 = new BonusVida(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+					aux640->identificador = true;
 					bonus.agregar(aux640);
 					break;
 					}
@@ -235,6 +236,7 @@ void Mundo::inicializa()
 	hombre.setPos(-7.0f, 0.0f);
 	hombre.setVel(0.0f, 0.0f);
 	hombre.setVida(1);
+	hombre.setDispEspecial(false);
 	Enemigo* aux64 = new Enemigo(1.0f,10.0f,-1.0f,10.0f);
 	enemigos.agregar(aux64);
 	Obstaculo* aux88 = new Obstaculo(0.0f,0.0f,5.0f,1.0f);
@@ -264,6 +266,41 @@ void Mundo::tecla(unsigned char key)
 			d->setPos(pos.x-1.5f, pos.y + 1.0f);
 			d->setVel(-20.0f, 0.0f);
 			disparos.agregar(d);
+			ETSIDI::play("sonidos/disparo.wav");
+		}
+	}
+	if (key == ' ' && hombre.getDispEspecial())
+	{
+		if (hombre.getVel().x >= 0.00)
+		{
+			Disparo* d = new Disparo();
+			Disparo* d2 = new Disparo();
+			Disparo* d3 = new Disparo();
+			Vector2D pos = hombre.getPos();
+			d->setPos(pos.x + 1.5f, pos.y + 1.0f);
+			d2->setPos(pos.x + 1.5f, pos.y + 1.5f);
+			d3->setPos(pos.x + 1.5f, pos.y + 0.5f);
+			disparos.agregar(d);
+			disparos.agregar(d2);
+			disparos.agregar(d3);
+			ETSIDI::play("sonidos/disparo.wav");
+		}
+		else
+		{
+			Disparo* d = new Disparo();
+			Disparo* d2 = new Disparo();
+			Disparo* d3 = new Disparo();
+			Vector2D pos = hombre.getPos();
+			d->setRadio(d->getRadio() + 1.5f);
+			d->setPos(pos.x - 1.5f, pos.y + 1.0f);
+			d2->setPos(pos.x - 1.5f, pos.y + 1.5f);
+			d3->setPos(pos.x - 1.5f, pos.y + 0.5f);
+			d->setVel(-20.0f, 0.0f);
+			d2->setVel(-20.0f, 0.0f);
+			d3->setVel(-20.0f, 0.0f);
+			disparos.agregar(d);
+			disparos.agregar(d2);
+			disparos.agregar(d3);
 			ETSIDI::play("sonidos/disparo.wav");
 		}
 	}

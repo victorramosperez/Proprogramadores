@@ -18,4 +18,5 @@ public:
     void setPos(float ix, float iy);
     Dimensiones getDim();
     friend class Interaccion;
+    bool identificador = false;
 };

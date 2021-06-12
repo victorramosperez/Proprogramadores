@@ -115,3 +115,5 @@ void ListaDisparos::eliminar(Disparo* d)
 			return;
 		}
 }
+
+

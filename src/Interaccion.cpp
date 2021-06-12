@@ -1,5 +1,6 @@
 #include "Interaccion.h"
 #include "Dimensiones.h"
+#include "Disparo.h"
 
 Interaccion::Interaccion()
 {
@@ -229,6 +230,9 @@ bool Interaccion::colision(Hombre& h, Bonus b)
         resultado = false;
     else if (h.dim.limtop1.y <= b.dim.limbot1.y)
         resultado = false;
+    if (b.identificador ==false) h.dispEspecial=true;
     return resultado;
 }
+
+
 

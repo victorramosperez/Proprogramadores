@@ -1,5 +1,5 @@
 #include "ListaBonus.h"
-
+#include "ListaDisparos.h"
 ListaBonus::ListaBonus()
 {
 	numero = 0;
@@ -44,7 +44,8 @@ void ListaBonus::colision(Hombre& h)
 	{
 		if (Interaccion::colision(h, *(lista[i])))
 		{
-			h.recibeVida();
+			if ((*lista[i]).identificador)
+				h.recibeVida();
 			delete lista[i];
 			numero--;
 			for (int j = i;j < numero;j++)

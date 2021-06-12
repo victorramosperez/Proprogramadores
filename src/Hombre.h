@@ -15,6 +15,7 @@ protected:
     float anchura = 0.5f;
     Dimensiones dim;
     int vida=1;
+    bool dispEspecial=false;
     bool vivo;
 public:
     Hombre();
@@ -27,6 +28,8 @@ public:
     Vector2D getPos() { return posicion; }
     Dimensiones getDim() { return dim; }
     int getVida() { return vida; }
+    bool getDispEspecial() { return dispEspecial; }
+    void setDispEspecial(bool b) { dispEspecial = b; }
     void setVida(int v) { vida = v; }
     //bool cogerBonus(Bonus b);
     void recibeDano() { vida--; }

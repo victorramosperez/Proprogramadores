@@ -4,6 +4,7 @@ BonusDisparo::BonusDisparo()
 {
     sprite.setCenter(0, 0);
     sprite.setSize(dim.limbot2.x - dim.limbot1.x, dim.limtop2.y - dim.limbot1.y);
+    
 }
 
 void BonusDisparo::dibuja()
