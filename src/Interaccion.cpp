@@ -164,14 +164,14 @@ bool Interaccion::colision(Hombre &h, Enemigo e)
     //hacia la derecha
     if (resultado && h.posicion.x < e.dim.limtop1.x)
     {
-        h.setPos(e.dim.limtop1.x - 0.6f, h.getPos().y);
+        h.setPos(e.dim.limtop1.x - 0.8f, h.getPos().y);
         h.setVel(-5.0f, h.getVel().y);
         return resultado;
     }
     //hacia la izquierda
     if (resultado && h.posicion.x > e.dim.limtop2.x)
     {
-        h.setPos(e.dim.limtop2.x + 0.6f, h.getPos().y);
+        h.setPos(e.dim.limtop2.x + 0.8f, h.getPos().y);
         h.setVel(5.0f, h.getVel().y);
         return resultado;
     }

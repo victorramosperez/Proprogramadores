@@ -35,15 +35,19 @@ void EnemigoBoss::dibuja()
     sprite.draw();
     glPopMatrix();
 
-    dim.limtop1.x = posicion.x;
-    dim.limtop1.y = posicion.y;
-    dim.limtop2.x = posicion.x;
-    dim.limtop2.y = posicion.y;
-    dim.limbot1.x = posicion.x;
-    dim.limbot1.y = posicion.y;
-    dim.limbot2.x = posicion.x;
-    dim.limbot2.y = posicion.y;
-    
+    //dim.limtop1 = (posicion.x - 0.25f, posicion.y + 0.9f);
+    dim.limtop1.x = posicion.x - 1.5f;
+    dim.limtop1.y = posicion.y + 3.5f;
+    //dim.limtop2 = (posicion.x + 0.25f, posicion.y + 0.9f);
+    dim.limtop2.x = posicion.x + 1.5f;
+    dim.limtop2.y = posicion.y + 3.5f;
+    //dim.limbot1 = (posicion.x - 0.25f, posicion.y - 0.9f);
+    dim.limbot1.x = posicion.x - 1.5f;
+    dim.limbot1.y = posicion.y;//-0.3f
+    //dim.limbot2 = (posicion.x + 0.25f, posicion.y - 0.9f);
+    dim.limbot2.x = posicion.x + 1.5f;
+    dim.limbot2.y = posicion.y;//
+    /*
     glDisable(GL_LIGHTING);
     glColor3ub(0, 255, 0);
     glBegin(GL_POLYGON);
@@ -52,6 +56,6 @@ void EnemigoBoss::dibuja()
     glVertex3d(dim.limtop2.x, dim.limtop2.y, 9.9f);
     glVertex3d(dim.limbot2.x, dim.limbot1.y, 9.9f);
     glEnd();
-    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHTING);*/
 }
 
