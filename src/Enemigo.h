@@ -18,7 +18,7 @@ public:
     Enemigo();
     Enemigo(float ix, float iy, float ixmin, float ixmax);
     ~Enemigo();
-    void dibuja();
+    virtual void dibuja();
     virtual void mueve(float t);
     void setDireccion(int ndir) { Direccion = ndir; }
     int getDireccion() { return Direccion; }
@@ -26,11 +26,4 @@ public:
     bool getBoss() { return boss; }
     SpriteSequence sprite{ "imagenes/enemigo8.png", 3 };
     friend class Interaccion;
-};
-
-class EnemigoSimple : public Enemigo { 
-public:
-	//EnemigoSimple(Vector2D posicion);
-protected:
-	//sprite
 };

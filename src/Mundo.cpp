@@ -248,8 +248,8 @@ void Mundo::inicializa()
 	hombre.setVel(0.0f, 0.0f);
 	hombre.setVida(1);
 	hombre.setDispEspecial(false);
-	Enemigo* aux64 = new Enemigo(1.0f,10.0f,-1.0f,10.0f);
-	enemigos.agregar(aux64);
+	/*Enemigo* aux64 = new Enemigo(1.0f,10.0f,-1.0f,10.0f);
+	enemigos.agregar(aux64);*/
 	Obstaculo* aux88 = new Obstaculo(0.0f,0.0f,5.0f,1.0f);
 	obstaculos.agregar(aux88);
 	puntos = 0;

@@ -73,27 +73,3 @@ void Hombre::setVel(float vx, float vy)
     velocidad.x = vx;
     velocidad.y = vy;
 }
-
-
-
-/*
-bool Hombre::cogerBonus(Bonus b)
-{
-    if (Interaccion::colision(b, h))
-    {
-        Vida += 1;
-        return true;
-    }
-    return false;
-}
-
-
-bool Hombre::recibeDano(Obstaculo o)
-{
-    if (Interaccion::colision(o, h))
-    {
-        Vida -= 1;
-        return true;
-    }
-    return false;
-}*/

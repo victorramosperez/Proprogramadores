@@ -17,7 +17,7 @@ Enemigo::Enemigo(float ix, float iy, float ixmin, float ixmax)
     Direccion = 0;
     Vivo = true;
     Vida = 1;
-    //velocidad.x = 2.5f;
+    velocidad.x = 2.5f;
     aceleracion.x = aceleracion.y = 0;
     Altura = 1.8f;
     posicion.x = ix;
@@ -26,6 +26,18 @@ Enemigo::Enemigo(float ix, float iy, float ixmin, float ixmax)
     sprite.setSize(2, 2);
     xmax = ixmax;
     xmin = ixmin;
+    //dim.limtop1 = (posicion.x - 0.25f, posicion.y + 0.9f);
+    dim.limtop1.x = posicion.x - 1.0f;
+    dim.limtop1.y = posicion.y + 2.0f;
+    //dim.limtop2 = (posicion.x + 0.25f, posicion.y + 0.9f);
+    dim.limtop2.x = posicion.x + 1.0f;
+    dim.limtop2.y = posicion.y + 2.0f;
+    //dim.limbot1 = (posicion.x - 0.25f, posicion.y - 0.9f);
+    dim.limbot1.x = posicion.x - 1.0f;
+    dim.limbot1.y = posicion.y;//-0.3f
+    //dim.limbot2 = (posicion.x + 0.25f, posicion.y - 0.9f);
+    dim.limbot2.x = posicion.x + 1.0f;
+    dim.limbot2.y = posicion.y;//
 }
 
 Enemigo::~Enemigo()
@@ -79,4 +91,5 @@ void Enemigo::mueve(float t)
     if (dim.limbot2.x >= xmax)
         velocidad.x = -2.5f;
     posicion = posicion + velocidad * t;
+    sprite.loop();
 }
