@@ -78,9 +78,9 @@ bool Mundo::cargarNivel()
 		plataformas.agregar(aux8);
 		Plataforma* aux9 = new Plataforma(45, 4, 48, 5);
 		plataformas.agregar(aux9);
-		Plataforma* aux10 = new Plataforma(52, 4, 54, 5);
+		Plataforma* aux10 = new Plataforma(52, 4, 55, 5);
 		plataformas.agregar(aux10);
-		Plataforma* aux11 = new Plataforma(56, 8, 59, 9);
+		Plataforma* aux11 = new Plataforma(57, 8, 59, 9);
 		plataformas.agregar(aux11);
 		Plataforma* aux12 = new Plataforma(58, 0, 61, 3);
 		plataformas.agregar(aux12);
@@ -270,18 +270,18 @@ void Mundo::mueve()
 				}
 				else
 				{
-					int valor = ETSIDI::lanzaDado(10);
+					int valor = ETSIDI::lanzaDado(8);
 					switch (valor)
 					{
 					case 1:
 					{
-						BonusVida* aux640 = new BonusVida(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+						BonusVida* aux640 = new BonusVida(enemigos[i]->getPos().x, enemigos[i]->getPos().y + 0.8f);
 						aux640->identificador = true;
 						bonus.agregar(aux640);
 						break;
 					}
 					case 2:
-						BonusDisparo * aux641 = new BonusDisparo(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+						BonusDisparo * aux641 = new BonusDisparo(enemigos[i]->getPos().x, enemigos[i]->getPos().y + 0.8f);
 						bonus.agregar(aux641);
 						break;
 					}
