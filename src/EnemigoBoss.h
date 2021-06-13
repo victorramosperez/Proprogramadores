@@ -16,7 +16,7 @@ public:
         dim.limtop2 = dim.limtop2 * 2.0f;
         sprite.setSize(dim.limbot2.x - dim.limbot1.x, dim.limtop2.y - dim.limbot1.y);
     }
-    SpriteSequence sprite{"imagenes/boss4.png", 4 };
+    SpriteSequence sprite{"imagenes/boss3.png", 3 };
     void mueve(float t);
     void dibuja();
 };

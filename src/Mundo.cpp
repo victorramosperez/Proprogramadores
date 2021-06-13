@@ -30,7 +30,9 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 	ETSIDI::printxy("Puntos: ", hombre.getPos().x + 5, 19);
 	ETSIDI::printxy(spuntos.c_str(), hombre.getPos().x + 8, 19);
-	ETSIDI::printxy("Vida: ", hombre.getPos().x + 5, 17);
+	if (hombre.getLlave())
+		ETSIDI::printxy("Tienes la llave ", hombre.getPos().x + 5, 18);
+	ETSIDI::printxy("Vidas: ", hombre.getPos().x + 5, 17);
 	ETSIDI::printxy(svida.c_str(), hombre.getPos().x + 7, 17);
 
 	plataformas.dibuja();
@@ -134,6 +136,16 @@ bool Mundo::cargarNivel()
 		plataformas.agregar(aux29);
 		Plataforma* aux30 = new Plataforma(71, 0, 73, 6);
 		plataformas.agregar(aux30);
+		//ENEMIGOS
+
+		//OBSTACULOS
+
+		//LLAVE
+		BonusLlave* aux421 = new BonusLlave(0.0f, 10.0f);
+		bonus.agregar(aux421);
+		//PUERTA
+		PlataformaPuerta* aux151 = new PlataformaPuerta(77.0f, 0.0f, 79.0f, 3.0f);
+		plataformas.agregar(aux151);
 	}
 	if (nivel == 3)
 	{
@@ -175,9 +187,18 @@ bool Mundo::cargarNivel()
 		plataformas.agregar(aux47);
 		Plataforma* aux48 = new Plataforma(69, 0, 71, 4);
 		plataformas.agregar(aux48);
-
 		Plataforma* aux50 = new Plataforma(0, 12, 80, 13);
 		plataformas.agregar(aux50);
+		//ENEMIGOS
+
+		//OBSTACULOS
+
+		//LLAVE
+		BonusLlave* aux422 = new BonusLlave(0.0f, 10.0f);
+		bonus.agregar(aux422);
+		//PUERTA
+		PlataformaPuerta* aux152 = new PlataformaPuerta(77.0f, 0.0f, 79.0f, 3.0f);
+		plataformas.agregar(aux152);
 	}
 	if (nivel == 4)
 	{
@@ -212,20 +233,29 @@ void Mundo::mueve()
 		{
 			if (Interaccion::colision(*disparos[j], *enemigos[i]))
 			{
-				int valor = ETSIDI::lanzaDado(3);
-				switch (valor)
+				if (enemigos[i]->getBoss())
 				{
-				case 1:
+					BonusLlave* aux639 = new BonusLlave(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+					bonus.agregar(aux639);
+					puntos += 1900;
+				}
+				else
+				{
+					int valor = ETSIDI::lanzaDado(10);
+					switch (valor)
 					{
-					BonusVida* aux640 = new BonusVida(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
-					aux640->identificador = true;
-					bonus.agregar(aux640);
-					break;
+					case 1:
+					{
+						BonusVida* aux640 = new BonusVida(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+						aux640->identificador = true;
+						bonus.agregar(aux640);
+						break;
 					}
-				case 2:
-					BonusDisparo * aux641 = new BonusDisparo(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
-					bonus.agregar(aux641);
-					break;
+					case 2:
+						BonusDisparo * aux641 = new BonusDisparo(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+						bonus.agregar(aux641);
+						break;
+					}
 				}
 				enemigos.eliminar(enemigos[i]);
 				disparos.eliminar(disparos[j]);
@@ -240,7 +270,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	setNivel(3);
+	setNivel(0);
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;
