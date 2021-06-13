@@ -256,7 +256,7 @@ void Mundo::mueve()
 	for (int i = 0; i < plataformas.getNumero();i++)
 		disparos.colision(*plataformas[i]);
 	
-	for (int i = disparos.getNumero();i > 0;i--)
+	for (int i = enemigos.getNumero();i >= 0;i--)
 	{
 		for (int j = disparos.getNumero();j > 0;j--)
 		{
