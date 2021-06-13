@@ -60,6 +60,7 @@ bool Mundo::cargarNivel()
 	
 	if (nivel == 1)
 	{
+		// MAPA 1:
 		Plataforma* aux = new Plataforma(1, 3, 4, 4);
 		plataformas.agregar(aux);
 		Plataforma* aux2 = new Plataforma(6, 7, 9, 8);
@@ -114,11 +115,9 @@ bool Mundo::cargarNivel()
 		//PUERTA
 		PlataformaPuerta* aux150 = new PlataformaPuerta(77.0f, 0.0f,79.0f, 3.0f);
 		plataformas.agregar(aux150);
-		
 	}
 	if (nivel == 2)
 	{
-		//Crear mapa, enemigos
 		//MAPA 2:
 		Plataforma* aux16 = new Plataforma(1, 3, 4, 4);
 		plataformas.agregar(aux16);
@@ -140,7 +139,7 @@ bool Mundo::cargarNivel()
 		plataformas.agregar(aux24);
 		Plataforma* aux25 = new Plataforma(50, 0, 52, 2);
 		plataformas.agregar(aux25);
-		Plataforma* aux26 = new Plataforma(49, 7, 55, 8);
+		Plataforma* aux26 = new Plataforma(50, 7, 55, 8);
 		plataformas.agregar(aux26);
 		Plataforma* aux28 = new Plataforma(60, 7, 65, 8);
 		plataformas.agregar(aux28);
@@ -166,7 +165,7 @@ bool Mundo::cargarNivel()
 		obstaculos.agregar(aux111);
 		Obstaculo* aux112 = new Obstaculo(47.0f, 0.0f, 50.0f, 1.0f);
 		obstaculos.agregar(aux112);
-		Obstaculo* aux113 = new Obstaculo(49.0f, 8.0f, 51.5f, 8.8f);
+		Obstaculo* aux113 = new Obstaculo(50.0f, 8.0f, 52.0f, 8.8f);
 		obstaculos.agregar(aux113);
 		//LLAVE
 		BonusLlave* aux421 = new BonusLlave(70.0f, 2.0f);
@@ -178,14 +177,11 @@ bool Mundo::cargarNivel()
 
 	if (nivel == 3)
 	{
-		//Crear mapa, enemigos
 		//MAPA 3:
-		Plataforma* aux31 = new Plataforma(1, 4, 6, 5);
+		Plataforma* aux31 = new Plataforma(1, 3, 6, 4);
 		plataformas.agregar(aux31);
 		Plataforma* aux32 = new Plataforma(8, 0, 9, 1);
 		plataformas.agregar(aux32);
-		Plataforma* aux33 = new Plataforma(11, 0, 12, 3);
-		plataformas.agregar(aux33);
 		Plataforma* aux34 = new Plataforma(14, 0, 15, 5);
 		plataformas.agregar(aux34);
 		Plataforma* aux35 = new Plataforma(18, 0, 19, 3);
@@ -196,34 +192,52 @@ bool Mundo::cargarNivel()
 		plataformas.agregar(aux37);
 		Plataforma* aux38 = new Plataforma(29, 3, 30, 6);
 		plataformas.agregar(aux38);
-		Plataforma* aux39 = new Plataforma(35, 4, 37, 12);
+		Plataforma* aux39 = new Plataforma(35, 0, 36, 4);
 		plataformas.agregar(aux39);
-		Plataforma* aux40 = new Plataforma(41, 3, 44, 4);
+		Plataforma* aux40 = new Plataforma(40, 3, 44, 4);
 		plataformas.agregar(aux40);
 		Plataforma* aux41 = new Plataforma(44, 3, 46, 12);
 		plataformas.agregar(aux41);
-		Plataforma* aux42 = new Plataforma(50, 3, 52, 4);
+		Plataforma* aux42 = new Plataforma(50, 0, 52, 4);
 		plataformas.agregar(aux42);
-		Plataforma* aux43 = new Plataforma(49, 3, 50, 12);
+		Plataforma* aux43 = new Plataforma(55, 3, 56, 8);
 		plataformas.agregar(aux43);
-		Plataforma* aux44 = new Plataforma(55, 3, 56, 8);
+		Plataforma* aux44 = new Plataforma(55, 7, 60, 8);
 		plataformas.agregar(aux44);
-		Plataforma* aux45 = new Plataforma(60, 8, 61, 12);
+		Plataforma* aux45 = new Plataforma(60, 7, 61, 12);
 		plataformas.agregar(aux45);
-		Plataforma* aux46 = new Plataforma(59, 3, 61, 4);
+		Plataforma* aux46 = new Plataforma(56, 3, 61, 4);
 		plataformas.agregar(aux46);
 		Plataforma* aux47 = new Plataforma(65, 0, 67, 3);
 		plataformas.agregar(aux47);
-		Plataforma* aux48 = new Plataforma(69, 0, 71, 4);
+		Plataforma* aux48 = new Plataforma(69, 0, 74, 4);
 		plataformas.agregar(aux48);
 		Plataforma* aux50 = new Plataforma(0, 12, 80, 13);
 		plataformas.agregar(aux50);
 		//ENEMIGOS
-
+		Enemigo* aux80 = new Enemigo(26.0f, 4.0f, 23.0f, 29.0f);
+		enemigos.agregar(aux80);
+		Enemigo* aux81 = new Enemigo(25.0f, 0.0f, 19.0f, 31.0f);
+		enemigos.agregar(aux81);
+		Enemigo* aux82 = new Enemigo(42.0f, 4.0f, 40.0f, 44.0f);
+		enemigos.agregar(aux82);
+		Enemigo* aux83 = new Enemigo(57.5f, 8.0f, 55.0f, 60.0f);
+		enemigos.agregar(aux83);
+		Enemigo* aux84 = new Enemigo(58.5f, 4.0f, 56.0f, 61.0f);
+		enemigos.agregar(aux84);
+		Enemigo* aux85 = new Enemigo(58.5f, 0.0f, 52.0f, 65.0f);
+		enemigos.agregar(aux85);
 		//OBSTACULOS
-
+		Obstaculo* aux120 = new Obstaculo(10.0f, 0.0f, 14.0f, 1.0f);
+		obstaculos.agregar(aux120);
+		Obstaculo* aux121 = new Obstaculo(15.0f, 0.0f, 18.0f, 1.0f);
+		obstaculos.agregar(aux121);
+		Obstaculo* aux122 = new Obstaculo(32.0f, 0.0f, 35.0f, 1.0f);
+		obstaculos.agregar(aux122);
+		Obstaculo* aux123 = new Obstaculo(71.0f, 4.0f, 74.0f, 5.0f);
+		obstaculos.agregar(aux123);
 		//LLAVE
-		BonusLlave* aux422 = new BonusLlave(0.0f, 10.0f);
+		BonusLlave* aux422 = new BonusLlave(59.0f, 10.0f);
 		bonus.agregar(aux422);
 		//PUERTA
 		PlataformaPuerta* aux152 = new PlataformaPuerta(77.0f, 0.0f, 79.0f, 3.0f);
