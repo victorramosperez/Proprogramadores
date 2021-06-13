@@ -35,7 +35,14 @@ void EnemigoBoss::dibuja()
     sprite.draw();
     glPopMatrix();
 
-    
+    dim.limtop1.x = posicion.x;
+    dim.limtop1.y = posicion.y;
+    dim.limtop2.x = posicion.x;
+    dim.limtop2.y = posicion.y;
+    dim.limbot1.x = posicion.x;
+    dim.limbot1.y = posicion.y;
+    dim.limbot2.x = posicion.x;
+    dim.limbot2.y = posicion.y;
     
     glDisable(GL_LIGHTING);
     glColor3ub(0, 255, 0);

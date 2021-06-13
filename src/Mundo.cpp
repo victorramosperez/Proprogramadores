@@ -60,6 +60,7 @@ bool Mundo::cargarNivel()
 	
 	if (nivel == 1)
 	{
+		
 		// MAPA 1:
 		Plataforma* aux = new Plataforma(1, 3, 4, 4);
 		plataformas.agregar(aux);
