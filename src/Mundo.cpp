@@ -30,6 +30,8 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 	ETSIDI::printxy("Puntos: ", hombre.getPos().x + 5, 19);
 	ETSIDI::printxy(spuntos.c_str(), hombre.getPos().x + 8, 19);
+	if (!(hombre.getLlave()) && hombre.getPos().x > 76.0f)
+		ETSIDI::printxy("Aun no has encontrado la llave", hombre.getPos().x + 5, 18);
 	if (hombre.getLlave())
 		ETSIDI::printxy("Tienes la llave ", hombre.getPos().x + 5, 18);
 	ETSIDI::printxy("Vidas: ", hombre.getPos().x + 5, 17);

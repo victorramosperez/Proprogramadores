@@ -1,7 +1,8 @@
 ﻿  Mundo.cpp
 C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(31,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
 C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(32,53): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(34,57): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(35,46): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(36,51): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(34,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(36,57): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(37,47): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(38,51): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   Pang.vcxproj -> C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\bin\Pang.exe
