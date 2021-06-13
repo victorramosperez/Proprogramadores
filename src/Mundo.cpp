@@ -60,7 +60,6 @@ bool Mundo::cargarNivel()
 	
 	if (nivel == 1)
 	{
-		
 		Plataforma* aux = new Plataforma(1, 3, 4, 4);
 		plataformas.agregar(aux);
 		Plataforma* aux2 = new Plataforma(6, 7, 9, 8);
@@ -115,24 +114,25 @@ bool Mundo::cargarNivel()
 		//PUERTA
 		PlataformaPuerta* aux150 = new PlataformaPuerta(77.0f, 0.0f,79.0f, 3.0f);
 		plataformas.agregar(aux150);
+		
 	}
 	if (nivel == 2)
 	{
 		//Crear mapa, enemigos
 		//MAPA 2:
-		Plataforma* aux16 = new Plataforma(1, 4, 4, 5);
+		Plataforma* aux16 = new Plataforma(1, 3, 4, 4);
 		plataformas.agregar(aux16);
-		Plataforma* aux17 = new Plataforma(9, 0, 11, 5);
+		Plataforma* aux17 = new Plataforma(9, 0, 11, 4);
 		plataformas.agregar(aux17);
-		Plataforma* aux18 = new Plataforma(13, 8, 16, 9);
+		Plataforma* aux18 = new Plataforma(13, 7, 16, 8);
 		plataformas.agregar(aux18);
-		Plataforma* aux19 = new Plataforma(18, 0, 20, 5);
+		Plataforma* aux19 = new Plataforma(18, 0, 20, 4);
 		plataformas.agregar(aux19);
 		Plataforma* aux20 = new Plataforma(23, 6, 24, 8);
 		plataformas.agregar(aux20);
 		Plataforma* aux21 = new Plataforma(27, 0, 29, 3);
 		plataformas.agregar(aux21);
-		Plataforma* aux22 = new Plataforma(35, 0, 37, 5);
+		Plataforma* aux22 = new Plataforma(35, 0, 37, 4);
 		plataformas.agregar(aux22);
 		Plataforma* aux23 = new Plataforma(40, 5, 42, 6);
 		plataformas.agregar(aux23);
@@ -140,27 +140,42 @@ bool Mundo::cargarNivel()
 		plataformas.agregar(aux24);
 		Plataforma* aux25 = new Plataforma(50, 0, 52, 2);
 		plataformas.agregar(aux25);
-		Plataforma* aux26 = new Plataforma(50, 8, 55, 9);
+		Plataforma* aux26 = new Plataforma(49, 7, 55, 8);
 		plataformas.agregar(aux26);
-		Plataforma* aux27 = new Plataforma(57, 0, 59, 2);
-		plataformas.agregar(aux27);
-		Plataforma* aux28 = new Plataforma(60, 8, 65, 9);
+		Plataforma* aux28 = new Plataforma(60, 7, 65, 8);
 		plataformas.agregar(aux28);
 		Plataforma* aux29 = new Plataforma(63, 0, 65, 3);
 		plataformas.agregar(aux29);
 		Plataforma* aux30 = new Plataforma(71, 0, 73, 6);
 		plataformas.agregar(aux30);
 		//ENEMIGOS
-
+		Enemigo* aux70 = new Enemigo(14.5f, 0.0f, 11.0f, 18.0f);
+		enemigos.agregar(aux70);
+		Enemigo* aux71 = new Enemigo(23.5f, 0.0f, 20.0f, 27.0f);
+		enemigos.agregar(aux71);
+		Enemigo* aux72 = new Enemigo(41.0f, 0.0f, 37.0f, 45.0f);
+		enemigos.agregar(aux72);
+		Enemigo* aux73 = new Enemigo(57.5f, 0.0f, 52.0f, 63.0f);
+		enemigos.agregar(aux73);
+		Enemigo* aux74 = new Enemigo(62.5f, 8.0f, 60.0f, 65.0f);
+		enemigos.agregar(aux74);
 		//OBSTACULOS
-
+		Obstaculo* aux110 = new Obstaculo(5.0f, 0.0f, 9.0f, 1.0f);
+		obstaculos.agregar(aux110);
+		Obstaculo* aux111 = new Obstaculo(32.0f, 0.0f, 35.0f, 1.0f);
+		obstaculos.agregar(aux111);
+		Obstaculo* aux112 = new Obstaculo(47.0f, 0.0f, 50.0f, 1.0f);
+		obstaculos.agregar(aux112);
+		Obstaculo* aux113 = new Obstaculo(49.0f, 8.0f, 51.5f, 8.8f);
+		obstaculos.agregar(aux113);
 		//LLAVE
-		BonusLlave* aux421 = new BonusLlave(0.0f, 10.0f);
+		BonusLlave* aux421 = new BonusLlave(70.0f, 2.0f);
 		bonus.agregar(aux421);
 		//PUERTA
 		PlataformaPuerta* aux151 = new PlataformaPuerta(77.0f, 0.0f, 79.0f, 3.0f);
 		plataformas.agregar(aux151);
 	}
+
 	if (nivel == 3)
 	{
 		//Crear mapa, enemigos
