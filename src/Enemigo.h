@@ -26,4 +26,6 @@ public:
     bool getBoss() { return boss; }
     SpriteSequence sprite{ "imagenes/enemigo8.png", 3 };
     friend class Interaccion;
+    int getVida() { return Vida; }
+    void restaVida() { Vida--; }
 };

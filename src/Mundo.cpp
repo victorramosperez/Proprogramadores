@@ -27,6 +27,13 @@ void Mundo::dibuja()
 	
 	string spuntos = to_string(puntos);
 	string svida = to_string(hombre.getVida());
+	if (nivel == 4 && enemigos[0]->getVida()>0)
+	{
+		string svidajefe = to_string(enemigos[0]->getVida());
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 14);
+		ETSIDI::printxy("Vida de Jesucristo: ", hombre.getPos().x - 8, 17);
+		ETSIDI::printxy(svidajefe.c_str(), hombre.getPos().x +1, 17);
+	}
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 	ETSIDI::printxy("Puntos: ", hombre.getPos().x + 5, 19);
 	ETSIDI::printxy(spuntos.c_str(), hombre.getPos().x + 8, 19);
@@ -51,6 +58,7 @@ bool Mundo::cargarNivel()
 {
 	nivel++;
 	hombre.setPos(0, 0);
+	hombre.setVel(0,0);
 	disparos.destruirContenido();
 	enemigos.destruirContenido();
 	plataformas.destruirContenido();
@@ -246,9 +254,18 @@ bool Mundo::cargarNivel()
 	}
 	if (nivel == 4)
 	{
+		//PLATAFORMAS
+		Plataforma* aux51 = new Plataforma(-10, 4, -6, 5);
+		plataformas.agregar(aux51);
+		Plataforma* aux52 = new Plataforma(65, 5, 77, 6);
+		plataformas.agregar(aux52);
+		//JEFE FINAL
 		EnemigoBoss* aux666 = new EnemigoBoss(10.0f, 0.0f, -100.0f, 100.0f);
 		aux666->setBoss(true);
 		enemigos.agregar(aux666);
+		//PUERTA
+		PlataformaPuerta* aux153 = new PlataformaPuerta(77.0f, 0.0f, 79.0f, 3.0f);
+		plataformas.agregar(aux153);
 	}
 	if (nivel <= 4)
 		return true;
@@ -277,13 +294,16 @@ void Mundo::mueve()
 		{
 			if (Interaccion::colision(*disparos[j], *enemigos[i]))
 			{
-				if (enemigos[i]->getBoss())
+				disparos.eliminar(disparos[j]);
+				enemigos[i]->restaVida();
+				if (enemigos[i]->getBoss() && enemigos[i]->getVida()==0)
 				{
 					BonusLlave* aux639 = new BonusLlave(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
 					bonus.agregar(aux639);
 					puntos += 1900;
+					enemigos.eliminar(enemigos[i]);
 				}
-				else
+				else if (!(enemigos[i]->getBoss()))
 				{
 					int valor = ETSIDI::lanzaDado(8);
 					switch (valor)
@@ -300,10 +320,9 @@ void Mundo::mueve()
 						bonus.agregar(aux641);
 						break;
 					}
+					enemigos.eliminar(enemigos[i]);
+					puntos += 100;
 				}
-				enemigos.eliminar(enemigos[i]);
-				disparos.eliminar(disparos[j]);
-				puntos += 100;
 			}
 		}
 	}
@@ -314,7 +333,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	setNivel(0);
+	setNivel(3);
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;

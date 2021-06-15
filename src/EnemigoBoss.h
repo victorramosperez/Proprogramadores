@@ -15,6 +15,7 @@ public:
         dim.limtop1 = dim.limtop1 * 2.0f;
         dim.limtop2 = dim.limtop2 * 2.0f;
         sprite.setSize(dim.limbot2.x - dim.limbot1.x, dim.limtop2.y - dim.limbot1.y);
+        Vida = 10;
     }
     SpriteSequence sprite{"imagenes/jefe2.png", 8 };
     void mueve(float t);
