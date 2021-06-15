@@ -259,6 +259,8 @@ bool Mundo::cargarNivel()
 	}
 	if (nivel == 4)
 	{
+		if(enemigos[0]->getVida() && hombre.getVida())
+			ETSIDI::play("sonidos/musicaboss.mp3");
 		//PLATAFORMAS
 		Plataforma* aux51 = new Plataforma(-10, 4, -6, 5);
 		plataformas.agregar(aux51);
@@ -305,7 +307,8 @@ void Mundo::mueve()
 				{
 					BonusLlave* aux639 = new BonusLlave(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
 					bonus.agregar(aux639);
-					puntos += 1900;
+					puntos += 2000;
+					ETSIDI::play("sonidos/muerteenemigo.mp3");
 					enemigos.eliminar(enemigos[i]);
 				}
 				else if (!(enemigos[i]->getBoss()))
@@ -325,6 +328,7 @@ void Mundo::mueve()
 						bonus.agregar(aux641);
 						break;
 					}
+					ETSIDI::play("sonidos/muerteenemigo.mp3");
 					enemigos.eliminar(enemigos[i]);
 					puntos += 100;
 				}
