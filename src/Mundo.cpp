@@ -31,7 +31,7 @@ void Mundo::dibuja()
 	{
 		string svidajefe = to_string(enemigos[0]->getVida());
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 14);
-		ETSIDI::printxy("Vida de Jesucristo: ", hombre.getPos().x - 8, 17);
+		ETSIDI::printxy("Vida de Jefe Marciano: ", hombre.getPos().x - 8, 17);
 		ETSIDI::printxy(svidajefe.c_str(), hombre.getPos().x +1, 17);
 	}
 	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
@@ -60,7 +60,7 @@ bool Mundo::cargarNivel()
 	hombre.setPos(0, 0);
 	hombre.setVel(0,0);
 	ETSIDI::play("sonidos/subenivel.mp3");
-	disparos.destruirContenido();
+	disparos.destruirContenido(); 
 	enemigos.destruirContenido();
 	plataformas.destruirContenido();
 	obstaculos.destruirContenido();
@@ -259,17 +259,38 @@ bool Mundo::cargarNivel()
 	}
 	if (nivel == 4)
 	{
-		if(enemigos[0]->getVida() && hombre.getVida())
-			ETSIDI::play("sonidos/musicaboss.mp3");
+		ETSIDI::stopMusica();
+		ETSIDI::playMusica("sonidos/musicaboss.mp3", true);
 		//PLATAFORMAS
-		Plataforma* aux51 = new Plataforma(-10, 4, -6, 5);
+		Plataforma* aux51 = new Plataforma(-8, 3, -5, 4);
 		plataformas.agregar(aux51);
-		Plataforma* aux52 = new Plataforma(65, 5, 77, 6);
+		Plataforma* aux52 = new Plataforma(0, 3, 10, 4);
 		plataformas.agregar(aux52);
+		Plataforma* aux53 = new Plataforma(15, 3, 25, 4);
+		plataformas.agregar(aux53);
+		Plataforma* aux54 = new Plataforma(30, 3, 40, 4);
+		plataformas.agregar(aux54);
+		Plataforma* aux55 = new Plataforma(45, 3, 55, 4);
+		plataformas.agregar(aux55);
+		Plataforma* aux56 = new Plataforma(60, 3, 70, 4);
+		plataformas.agregar(aux56);
+		Plataforma* aux57 = new Plataforma(75, 3, 78, 4);
+		plataformas.agregar(aux57);
 		//JEFE FINAL
-		EnemigoBoss* aux666 = new EnemigoBoss(10.0f, 0.0f, -100.0f, 100.0f);
+		EnemigoBoss* aux666 = new EnemigoBoss(50.0f, 0.0f, -100.0f, 100.0f);
 		aux666->setBoss(true);
 		enemigos.agregar(aux666);
+		//ENEMIGOS AUXILIARES
+		Enemigo* aux91 = new Enemigo(5.0f, 4.0f, 0.0f, 10.0f);
+		enemigos.agregar(aux91);
+		Enemigo* aux92 = new Enemigo(20.0f, 4.0f, 15.0f, 25.0f);
+		enemigos.agregar(aux92);
+		Enemigo* aux93 = new Enemigo(35.0f, 4.0f, 30.0f, 40.0f);
+		enemigos.agregar(aux93);
+		Enemigo* aux94 = new Enemigo(50.0f, 4.0f, 45.0f, 55.0f);
+		enemigos.agregar(aux94);
+		Enemigo* aux95 = new Enemigo(65.0f, 4.0f, 60.0f, 70.0f);
+		enemigos.agregar(aux95);
 		//PUERTA
 		PlataformaPuerta* aux153 = new PlataformaPuerta(77.0f, 0.0f, 79.0f, 3.0f);
 		plataformas.agregar(aux153);
@@ -305,7 +326,7 @@ void Mundo::mueve()
 				enemigos[i]->restaVida();
 				if (enemigos[i]->getBoss() && enemigos[i]->getVida()==0)
 				{
-					BonusLlave* aux639 = new BonusLlave(enemigos[i]->getPos().x, enemigos[i]->getPos().y);
+					BonusLlave* aux639 = new BonusLlave(enemigos[i]->getPos().x, enemigos[i]->getPos().y+1.0f);
 					bonus.agregar(aux639);
 					puntos += 2000;
 					ETSIDI::play("sonidos/muerteenemigo.mp3");
@@ -328,7 +349,7 @@ void Mundo::mueve()
 						bonus.agregar(aux641);
 						break;
 					}
-					ETSIDI::play("sonidos/muerteenemigo.mp3");
+					ETSIDI::play("sonidos/muerteenemigobasico.ogg");
 					enemigos.eliminar(enemigos[i]);
 					puntos += 100;
 				}
@@ -350,11 +371,8 @@ void Mundo::inicializa()
 	hombre.setVel(0.0f, 0.0f);
 	hombre.setVida(1);
 	hombre.setDispEspecial(false);
-	/*Enemigo* aux64 = new Enemigo(1.0f,10.0f,-1.0f,10.0f);
-	enemigos.agregar(aux64);*/
-	Obstaculo* aux88 = new Obstaculo(0.0f,0.0f,5.0f,1.0f);
-	obstaculos.agregar(aux88);
 	puntos = 0;
+	ETSIDI::playMusica("sonidos/musicafondo.wav", true);
 }
 
 Mundo::~Mundo()

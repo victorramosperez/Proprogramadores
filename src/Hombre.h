@@ -36,6 +36,6 @@ public:
     bool getLlave() { return llave; }
     void recibeDano() { ETSIDI::play("sonidos/ouch.mp3"); vida--; }
     void recibeVida() { vida++; }
-    SpriteSequence sprite{ "imagenes/samus.png", 3 };
+    SpriteSequence sprite{ "imagenes/samus2.png", 3 };
     friend class Interaccion;
 };

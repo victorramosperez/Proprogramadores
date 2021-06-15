@@ -1,5 +1,6 @@
 ﻿  Mundo.cpp
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(34,61): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\EnemigoBoss.h(12,1): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(34,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
 C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(35,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
 C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(38,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
 C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(39,53): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos

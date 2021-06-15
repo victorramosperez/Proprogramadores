@@ -1,7 +1,8 @@
 #include "Coordinador.h"
 #include "freeglut.h"
 #include "ETSIDI.h"
-
+#include <string>
+using namespace std;
 Coordinador::Coordinador()
 {
 	estado = INICIO;
@@ -21,7 +22,7 @@ void Coordinador::tecla(unsigned char key)
 {
 	if (estado == INICIO)
 	{
-		if (key == 'e')
+		if (key == 'e' || key=='E')
 		{
 			mundo.nivel = 0;
 			mundo.inicializa();
@@ -29,29 +30,29 @@ void Coordinador::tecla(unsigned char key)
 			estado = JUEGO;
 		}
 
-		if (key == 's')
+		if (key == 's' || key == 'S')
 			exit(0);
 	}
 	else if (estado == JUEGO)
 	{
 		mundo.tecla(key);
-		if (key == 'p')
+		if (key == 'p' || key == 'P')
 			estado = PAUSA;
 		
 	}
 	else if (estado == PAUSA)
 	{
-		if (key == 'c')
+		if (key == 'c' || key == 'C')
 			estado = JUEGO;
 	}
 	else if (estado == GAMEOVER)
 	{
-		if (key == 'c')
+		if (key == 'c' || key == 'C')
 			estado = INICIO;
 	}
 	else if (estado == FIN)
 	{
-		if (key == 'c')
+		if (key == 'c' || key == 'C')
 			estado = INICIO;
 	}
 }
@@ -65,12 +66,14 @@ void Coordinador::mueve()
 		{
 			if (!mundo.cargarNivel())
 			{
+				ETSIDI::stopMusica();
 				ETSIDI::play("sonidos/ganaste.mp3");
 				estado = FIN;
 			}
 		}
 		if (!mundo.hombre.getVida())
 		{
+			ETSIDI::stopMusica();
 			ETSIDI::play("sonidos/perdiste.mp3");
 			estado = GAMEOVER;
 		}
@@ -136,20 +139,62 @@ void Coordinador::dibuja()
 	}
 	else if (estado == GAMEOVER)
 	{
-		//mundo.dibuja();
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+
+		//dibujo del fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/gameover.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3d(-10, 0, 5);
+		glTexCoord2d(1, 1); glVertex3d(10, 0, 5);
+		glTexCoord2d(1, 0); glVertex3d(10, 15, 5);
+		glTexCoord2d(0, 0); glVertex3d(-10, 15, 5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+
 		ETSIDI::setTextColor(1, 0, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("GAMEOVER: Has perdido", -4, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -4, 5);
+		ETSIDI::printxy("Has fracasado.", -2, 10);
+
+		string spuntos = to_string(mundo.puntos);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
+		ETSIDI::printxy("Tu puntuacion ha sido: ",-2 , 7);
+		ETSIDI::printxy(spuntos.c_str(),7 , 7);
+		ETSIDI::printxy(" puntos", 9, 7);
+		ETSIDI::printxy("Pulsa -C- para continuar", -2, 4);
 	}
 	else if (estado == FIN)
 	{
-		mundo.dibuja();
+		gluLookAt(0, 7.5, 30, // posicion del ojo
+			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+		//dibujo del fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fin.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3d(-10, 0, 5);
+		glTexCoord2d(1, 1); glVertex3d(10, 0, 5);
+		glTexCoord2d(1, 0); glVertex3d(10, 15, 5);
+		glTexCoord2d(0, 0); glVertex3d(-10, 15, 5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+
+		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -5, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -5, 9);
+		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -1, 10);
+		string spuntos = to_string(mundo.puntos);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
+		ETSIDI::printxy("Tu puntuacion ha sido: ", -2, 7);
+		ETSIDI::printxy(spuntos.c_str(), 7, 7);
+		ETSIDI::printxy(" puntos", 9, 7);
+		ETSIDI::printxy("Pulsa -C- para continuar", 0, 1);
 	}
 }
