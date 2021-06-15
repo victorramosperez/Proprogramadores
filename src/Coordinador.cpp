@@ -64,10 +64,14 @@ void Coordinador::mueve()
 		if (mundo.hombre.getPos().x >= 76.5f && mundo.hombre.getLlave())
 		{
 			if (!mundo.cargarNivel())
+			{
+				ETSIDI::play("sonidos/ganaste.mp3");
 				estado = FIN;
+			}
 		}
 		if (!mundo.hombre.getVida())
 		{
+			ETSIDI::play("sonidos/perdiste.mp3");
 			estado = GAMEOVER;
 		}
 	}

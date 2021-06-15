@@ -45,8 +45,15 @@ void ListaBonus::colision(Hombre& h)
 		if (Interaccion::colision(h, *(lista[i])))
 		{
 			if ((*lista[i]).identificador == 1)
+			{
+				ETSIDI::play("sonidos/vida.mp3");
 				h.recibeVida();
-			else if ((*lista[i]).identificador == 2)h.setDispEspecial(true);
+			}
+			else if ((*lista[i]).identificador == 2)
+			{
+				ETSIDI::play("sonidos/bonus.mp3");
+				h.setDispEspecial(true);
+			}
 			else h.setLlave(true);
 			delete lista[i];
 			numero--;

@@ -59,6 +59,7 @@ bool Mundo::cargarNivel()
 	nivel++;
 	hombre.setPos(0, 0);
 	hombre.setVel(0,0);
+	ETSIDI::play("sonidos/subenivel.mp3");
 	disparos.destruirContenido();
 	enemigos.destruirContenido();
 	plataformas.destruirContenido();
@@ -333,7 +334,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	setNivel(3);
+	setNivel(0);
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;
@@ -428,6 +429,7 @@ void Mundo::teclaEspecial(unsigned char key)
 		if (hombre.getVel().y>=-0.5f && hombre.getVel().y <= 0.1f)
 		{
 			hombre.setVel(hombre.getVel().x, 14);
+			ETSIDI::play("sonidos/salto.mp3");
 		}
 		break;
 	}
