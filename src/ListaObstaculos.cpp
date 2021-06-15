@@ -41,8 +41,12 @@ void ListaObstaculos::colision(Hombre& h)
 {
 	for (int i = 0;i < numero;i++)
 	{
-		if(Interaccion::colision(h, *(lista[i])))
+		if (Interaccion::colision(h, *(lista[i])))
+		{
 			h.recibeDano();
+			if (h.getDispEspecial())
+				h.setDispEspecial(false);
+		}
 	}
 }
 

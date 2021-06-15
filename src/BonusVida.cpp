@@ -11,7 +11,7 @@ BonusVida::BonusVida()
 
 void BonusVida::dibuja()
 {
-    
+    /*
     glDisable(GL_LIGHTING);
     glColor3ub(0, 255, 0);
     glBegin(GL_POLYGON);
@@ -20,7 +20,7 @@ void BonusVida::dibuja()
     glVertex3d(dim.limtop2.x, dim.limtop2.y, 9.9f);
     glVertex3d(dim.limbot2.x, dim.limbot1.y, 9.9f);
     glEnd();
-    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHTING);*/
 
     glPushMatrix();
     glTranslatef(dim.limbot1.x, dim.limbot1.y, 10);

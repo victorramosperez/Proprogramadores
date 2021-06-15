@@ -51,7 +51,11 @@ void ListaEnemigos::colision(Hombre &h)
 			lista[i]->setVel(h.getPos().x - lista[i]->getPos().x, lista[i]->getVel().y);
 		}
 		if (Interaccion::colision(h, *(lista[i])))
+		{
 			h.recibeDano();
+			if (h.getDispEspecial())
+				h.setDispEspecial(false);
+		}
 	}
 }
 

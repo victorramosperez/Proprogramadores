@@ -54,7 +54,11 @@ void ListaBonus::colision(Hombre& h)
 				ETSIDI::play("sonidos/bonus.mp3");
 				h.setDispEspecial(true);
 			}
-			else h.setLlave(true);
+			else
+			{
+				h.setLlave(true);
+				ETSIDI::play("sonidos/llave.mp3");
+			}
 			delete lista[i];
 			numero--;
 			for (int j = i;j < numero;j++)

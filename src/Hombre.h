@@ -34,7 +34,7 @@ public:
     void setVida(int v) { vida = v; }
     void setLlave(bool b) { llave = b; }
     bool getLlave() { return llave; }
-    void recibeDano() { vida--; }
+    void recibeDano() { ETSIDI::play("sonidos/ouch.mp3"); vida--; }
     void recibeVida() { vida++; }
     SpriteSequence sprite{ "imagenes/samus.png", 3 };
     friend class Interaccion;
