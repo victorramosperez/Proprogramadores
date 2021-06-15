@@ -134,8 +134,14 @@ void Coordinador::dibuja()
 
 
 		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
+		ETSIDI::printxy("PULSE LA TECLA -C- PARA CONTINUAR", -8, 7);
+		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-		ETSIDI::printxy("PULSE LA TECLA -C- PARA CONTINUAR", -6, 7);
+		ETSIDI::printxy("En el juego, utiliza las flechas de direccion", -6, 5);
+		ETSIDI::printxy("para desplazarte y saltar.", -4, 4);
+		ETSIDI::printxy("Utiliza la barra espaciadora para disparar.", -6, 3);
+		ETSIDI::printxy("Elimina a los enemigos para conseguir bonus.", -6, 2);
 	}
 	else if (estado == GAMEOVER)
 	{
