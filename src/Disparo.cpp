@@ -21,18 +21,18 @@ void Disparo::dibuja()
 	dim.limtop2.x = posicion.x + radio;
 	dim.limtop2.y = posicion.y + radio;
 
-	/*
+	
 	glColor3f(0.0f, 1.0f, 1.0f);
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 10);
 	glutSolidSphere(radio, 20, 20);
 	glPopMatrix();
-	glBegin(GL_LINES);
-	glVertex3f(origen.x, origen.y, 10);
-	glVertex3f(posicion.x, posicion.y, 10);
-	glEnd();
-	*/
-
+	//glBegin(GL_LINES);
+	//glVertex3f(origen.x, origen.y, 10);
+	//glVertex3f(posicion.x, posicion.y, 10);
+	//glEnd();
+	
+	/*
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 10);
 	glColor3f(1.0f, 0.0f, 0.0f);
@@ -46,16 +46,17 @@ void Disparo::dibuja()
 		sprite.setState(1, false);
 	sprite.draw();
 	glPopMatrix();
-	/*
+	*/
+	
 	glDisable(GL_LIGHTING);
 	glColor3ub(0, 255, 0);
 	glBegin(GL_POLYGON);
-	glVertex3d(dim.limbot1.x, dim.limbot1.y, 10.2f);
-	glVertex3d(dim.limtop1.x, dim.limtop1.y, 10.2f);
-	glVertex3d(dim.limtop2.x, dim.limtop2.y, 10.2f);
-	glVertex3d(dim.limbot2.x, dim.limbot1.y, 10.2f);
+	glVertex3d(dim.limbot1.x, dim.limbot1.y, 9.9f);
+	glVertex3d(dim.limtop1.x, dim.limtop1.y, 9.9f);
+	glVertex3d(dim.limtop2.x, dim.limtop2.y, 9.9f);
+	glVertex3d(dim.limbot2.x, dim.limbot1.y, 9.9f);
 	glEnd();
-	glEnable(GL_LIGHTING);*/
+	glEnable(GL_LIGHTING);
 }
 
 float Disparo::getRadio()

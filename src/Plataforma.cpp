@@ -44,15 +44,15 @@ void Plataforma::setPos(float x1, float y1, float x2, float y2)
 }
 void Plataforma::dibuja()
 {
-	/*glDisable(GL_LIGHTING);
-	glColor3ub(color.r, color.g, color.b);
+	glDisable(GL_LIGHTING);
+	glColor3ub(0, color.g, 0);
 	glBegin(GL_POLYGON);
 	glVertex3d(limite1.x, limite1.y, 10);
 	glVertex3d(limite1.x, limite2.y, 10);
 	glVertex3d(limite2.x, limite2.y, 10);
 	glVertex3d(limite2.x, limite1.y, 10);
 	glEnd();
-	glEnable(GL_LIGHTING);*/
+	glEnable(GL_LIGHTING);
 
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/tile5.png").id);

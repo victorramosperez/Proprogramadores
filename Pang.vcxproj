@@ -39,7 +39,7 @@
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\ObjetoMovil.cpp" />
     <ClCompile Include="src\Obstaculo.cpp" />
-    <ClCompile Include="src\Pang.cpp" />
+    <ClCompile Include="src\Metroid.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Plataforma.cpp" />
     <ClCompile Include="src\PlataformaPuerta.cpp" />
@@ -78,6 +78,7 @@
     <ProjectGuid>{e575fade-b6eb-4154-a1ed-8067a12eae98}</ProjectGuid>
     <RootNamespace>Pang</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Metroid</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

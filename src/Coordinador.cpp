@@ -84,14 +84,26 @@ void Coordinador::dibuja()
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+
+		//dibujo del fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/portada4.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3d(-10, 0, 5);
+		glTexCoord2d(1, 1); glVertex3d(10, 0, 5);
+		glTexCoord2d(1, 0); glVertex3d(10, 15, 5);
+		glTexCoord2d(0, 0); glVertex3d(-10, 15, 5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("Erjueguito 1.1", -5, 8);
-		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-		ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", 0, 7);
-		ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", 0, 6);
-		ETSIDI::printxy("Proprogramadores", 2, 1);
+		ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", -7, 3);
+		ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", -7, 2);
+		ETSIDI::printxy("Proprogramadores", 2, 0);
 	}
 	else if (estado == JUEGO)
 	{
@@ -102,6 +114,22 @@ void Coordinador::dibuja()
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+
+		//dibujo del fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pausa2.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3d(-10, 0, 5);
+		glTexCoord2d(1, 1); glVertex3d(10, 0, 5);
+		glTexCoord2d(1, 0); glVertex3d(10, 15, 5);
+		glTexCoord2d(0, 0); glVertex3d(-10, 15, 5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+
+
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 		ETSIDI::printxy("PULSE LA TECLA -C- PARA CONTINUAR", -6, 7);

@@ -5,16 +5,16 @@ void EnemigoBoss::mueve(float t)
 	posicion = posicion + velocidad * t;
 
     //dim.limtop1 = (posicion.x - 0.25f, posicion.y + 0.9f);
-    dim.limtop1.x = posicion.x - 1.0f;
-    dim.limtop1.y = posicion.y + 4.0f;
+    dim.limtop1.x = posicion.x - 1.5f;
+    dim.limtop1.y = posicion.y + 5.5f;
     //dim.limtop2 = (posicion.x + 0.25f, posicion.y + 0.9f);
-    dim.limtop2.x = posicion.x + 2.0f;
-    dim.limtop2.y = posicion.y + 4.0f;
+    dim.limtop2.x = posicion.x + 3.0f;
+    dim.limtop2.y = posicion.y + 5.5f;
     //dim.limbot1 = (posicion.x - 0.25f, posicion.y - 0.9f);
-    dim.limbot1.x = posicion.x - 1.0f;
+    dim.limbot1.x = posicion.x - 1.5f;
     dim.limbot1.y = posicion.y;//-0.3f
     //dim.limbot2 = (posicion.x + 0.25f, posicion.y - 0.9f);
-    dim.limbot2.x = posicion.x + 2.0f;
+    dim.limbot2.x = posicion.x + 3.0f;
     dim.limbot2.y = posicion.y;//
     sprite.loop();
 }
@@ -22,7 +22,7 @@ void EnemigoBoss::mueve(float t)
 void EnemigoBoss::dibuja()
 {
     glPushMatrix();
-    glTranslatef(posicion.x, posicion.y, 10);
+    glTranslatef(posicion.x, posicion.y, 10.2);
     glColor3f(1.0f, 0.0f, 0.0f);
     //glutSolidSphere(Altura, 20, 20);
     //gestion de direccion y animacion
@@ -35,18 +35,6 @@ void EnemigoBoss::dibuja()
     sprite.draw();
     glPopMatrix();
 
-    //dim.limtop1 = (posicion.x - 0.25f, posicion.y + 0.9f);
-    dim.limtop1.x = posicion.x - 1.5f;
-    dim.limtop1.y = posicion.y + 3.5f;
-    //dim.limtop2 = (posicion.x + 0.25f, posicion.y + 0.9f);
-    dim.limtop2.x = posicion.x + 1.5f;
-    dim.limtop2.y = posicion.y + 3.5f;
-    //dim.limbot1 = (posicion.x - 0.25f, posicion.y - 0.9f);
-    dim.limbot1.x = posicion.x - 1.5f;
-    dim.limbot1.y = posicion.y;//-0.3f
-    //dim.limbot2 = (posicion.x + 0.25f, posicion.y - 0.9f);
-    dim.limbot2.x = posicion.x + 1.5f;
-    dim.limbot2.y = posicion.y;//
     /*
     glDisable(GL_LIGHTING);
     glColor3ub(0, 255, 0);

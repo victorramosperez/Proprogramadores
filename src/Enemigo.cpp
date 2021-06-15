@@ -72,16 +72,16 @@ void Enemigo::dibuja()
     //dim.limbot2 = (posicion.x + 0.25f, posicion.y - 0.9f);
     dim.limbot2.x = posicion.x + 1.0f;
     dim.limbot2.y = posicion.y;//
-	/*
+	
     glDisable(GL_LIGHTING);
     glColor3ub(0, 255, 0);
     glBegin(GL_POLYGON);
-    glVertex3d(dim.limbot1.x, dim.limbot1.y, 10.2f);
-    glVertex3d(dim.limtop1.x, dim.limtop1.y, 10.2f);
-    glVertex3d(dim.limtop2.x, dim.limtop2.y, 10.2f);
-    glVertex3d(dim.limbot2.x, dim.limbot1.y, 10.2f);
+    glVertex3d(dim.limbot1.x, dim.limbot1.y, 9.9f);
+    glVertex3d(dim.limtop1.x, dim.limtop1.y, 9.9f);
+    glVertex3d(dim.limtop2.x, dim.limtop2.y, 9.9f);
+    glVertex3d(dim.limbot2.x, dim.limbot1.y, 9.9f);
     glEnd();
-    glEnable(GL_LIGHTING);*/
+    glEnable(GL_LIGHTING);
 }
 
 void Enemigo::mueve(float t)

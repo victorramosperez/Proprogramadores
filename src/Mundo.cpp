@@ -168,6 +168,8 @@ bool Mundo::cargarNivel()
 		enemigos.agregar(aux73);
 		Enemigo* aux74 = new Enemigo(62.5f, 8.0f, 60.0f, 65.0f);
 		enemigos.agregar(aux74);
+		Enemigo* aux75 = new Enemigo(67.5f, 0.0f, 65.0f, 71.0f);
+		enemigos.agregar(aux75);
 		//OBSTACULOS
 		Obstaculo* aux110 = new Obstaculo(5.0f, 0.0f, 9.0f, 1.0f);
 		obstaculos.agregar(aux110);
@@ -218,7 +220,7 @@ bool Mundo::cargarNivel()
 		plataformas.agregar(aux45);
 		Plataforma* aux46 = new Plataforma(56, 3, 61, 4);
 		plataformas.agregar(aux46);
-		Plataforma* aux47 = new Plataforma(65, 0, 67, 3);
+		Plataforma* aux47 = new Plataforma(65, 0, 66, 3);
 		plataformas.agregar(aux47);
 		Plataforma* aux48 = new Plataforma(69, 0, 74, 4);
 		plataformas.agregar(aux48);
@@ -246,6 +248,8 @@ bool Mundo::cargarNivel()
 		obstaculos.agregar(aux122);
 		Obstaculo* aux123 = new Obstaculo(71.0f, 4.0f, 74.0f, 5.0f);
 		obstaculos.agregar(aux123);
+		Obstaculo* aux124 = new Obstaculo(66.0f, 0.0f, 69.0f, 1.0f);
+		obstaculos.agregar(aux124);
 		//LLAVE
 		BonusLlave* aux422 = new BonusLlave(59.0f, 10.0f);
 		bonus.agregar(aux422);
@@ -334,7 +338,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	setNivel(0);
+	setNivel(2);
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;
@@ -363,7 +367,7 @@ void Mundo::tecla(unsigned char key)
 			Vector2D pos = hombre.getPos();
 			d->setPos(pos.x+1.5f, pos.y + 1.0f);
 			disparos.agregar(d);
-			ETSIDI::play("sonidos/disparo.wav");
+			ETSIDI::play("sonidos/laser.mp3");
 		}
 		else
 		{
@@ -372,7 +376,7 @@ void Mundo::tecla(unsigned char key)
 			d->setPos(pos.x-1.5f, pos.y + 1.0f);
 			d->setVel(-20.0f, 0.0f);
 			disparos.agregar(d);
-			ETSIDI::play("sonidos/disparo.wav");
+			ETSIDI::play("sonidos/laser.mp3");
 		}
 	}
 	if (key == ' ' && hombre.getDispEspecial())
