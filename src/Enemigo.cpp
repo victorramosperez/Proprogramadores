@@ -1,16 +1,5 @@
 #include "Enemigo.h"
 #include "freeglut.h"
-Enemigo::Enemigo()
-{
-	Direccion = 0;
-	Vivo = true;
-	Vida = 0;
-    	aceleracion.x = aceleracion.y = 0;
-    	Altura = 1.8f;
-   	sprite.setCenter(1, 0);
-    	sprite.setSize(2, 2);
-   
-}
 
 Enemigo::Enemigo(float ix, float iy, float ixmin, float ixmax)
 {

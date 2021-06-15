@@ -21,16 +21,16 @@ void Disparo::dibuja()
 	dim.limtop2.x = posicion.x + radio;
 	dim.limtop2.y = posicion.y + radio;
 
-	/*
+	/*//DISPARO 1.0 (BOLA Y ESTELA) 
 	glColor3f(0.0f, 1.0f, 1.0f);
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 10);
 	glutSolidSphere(radio, 20, 20);
 	glPopMatrix();
-	//glBegin(GL_LINES);
-	//glVertex3f(origen.x, origen.y, 10);
-	//glVertex3f(posicion.x, posicion.y, 10);
-	//glEnd();*/
+	glBegin(GL_LINES);
+	glVertex3f(origen.x, origen.y, 10);
+	glVertex3f(posicion.x, posicion.y, 10);
+	glEnd();*/
 	
 	
 	glPushMatrix();
@@ -47,7 +47,7 @@ void Disparo::dibuja()
 	sprite.draw();
 	glPopMatrix();
 	
-	/*
+	/*//POLIGONO DE LIMITES
 	glDisable(GL_LIGHTING);
 	glColor3ub(0, 255, 0);
 	glBegin(GL_POLYGON);
@@ -62,18 +62,4 @@ void Disparo::dibuja()
 float Disparo::getRadio()
 {
 	return radio;
-}
-
-void Disparo::setPos(float ix, float iy)
-{
-	posicion.x = ix;
-	posicion.y = iy;
-	origen.x = ix;
-	origen.y = iy;
-}
-
-void Disparo::setPos(Vector2D pos)
-{
-	posicion.x = pos.x;
-	posicion.y = pos.y;
 }

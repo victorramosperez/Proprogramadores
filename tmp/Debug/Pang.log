@@ -1,11 +1,18 @@
-﻿  Mundo.cpp
+﻿  Coordinador.cpp
 C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\EnemigoBoss.h(12,1): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(34,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(35,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(38,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(39,53): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(41,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(43,57): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(44,47): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(45,51): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Metroid.cpp
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\EnemigoBoss.h(12,1): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Mundo.cpp
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\EnemigoBoss.h(12,1): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(26,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(27,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(30,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(31,53): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(33,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(35,57): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(36,47): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\Mundo.cpp(37,51): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  PlataformaPuerta.cpp
+C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\src\PlataformaPuerta.cpp(6,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+  Generando código...
   Pang.vcxproj -> C:\Users\victo\OneDrive\Documentos\GitHub\Proprogramadores\bin\Metroid.exe

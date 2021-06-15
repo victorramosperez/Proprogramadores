@@ -15,7 +15,6 @@ protected:
     float xmin;
     bool boss = false;
 public:
-    Enemigo();
     Enemigo(float ix, float iy, float ixmin, float ixmax);
     ~Enemigo();
     virtual void dibuja();

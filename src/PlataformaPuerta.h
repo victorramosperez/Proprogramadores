@@ -1,8 +1,7 @@
 #pragma once
 #include "Plataforma.h"
 using ETSIDI::SpriteSequence;
-class PlataformaPuerta :
-    public Plataforma
+class PlataformaPuerta : public Plataforma
 {
 public:
     PlataformaPuerta(float x1, float y1, float x2, float y2) :Plataforma(x1, y1, x2, y2) {

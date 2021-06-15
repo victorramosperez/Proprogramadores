@@ -8,10 +8,8 @@ class Obstaculo
 {
 protected:
 	Dimensiones dim;
-	int dano;
 
 public:
-	Obstaculo();
 	Obstaculo(float xmin, float ymin, float xmax, float ymax);
 	void dibuja();
 	Dimensiones getDim();

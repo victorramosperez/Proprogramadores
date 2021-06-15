@@ -44,16 +44,6 @@ void Plataforma::setPos(float x1, float y1, float x2, float y2)
 }
 void Plataforma::dibuja()
 {
-	/*glDisable(GL_LIGHTING);
-	glColor3ub(0, color.g, 0);
-	glBegin(GL_POLYGON);
-	glVertex3d(limite1.x, limite1.y, 10);
-	glVertex3d(limite1.x, limite2.y, 10);
-	glVertex3d(limite2.x, limite2.y, 10);
-	glVertex3d(limite2.x, limite1.y, 10);
-	glEnd();
-	glEnable(GL_LIGHTING);*/
-
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/tile5.png").id);
 	glDisable(GL_LIGHTING);
@@ -72,28 +62,3 @@ Dimensiones Plataforma::getDim()
 {
 	return dim;
 }
-
-/*
-//Calculo de distancia de una Plataforma a un punto, adicionalmente
-//se modifica el valor de un vector direccion opcional que contendrá
-//el vector unitario saliente que indica la direccion de la
-//recta más corta entre el punto y la Plataforma. 
-float Plataforma::distancia(Vector2D punto, Vector2D* direccion)
-{
-	Vector2D u = (punto - limite1);
-	Vector2D v = (limite2 - limite1).unitario();
-	float longitud = (limite1 - limite2).modulo();
-	Vector2D dir;
-	float valor = u * v;
-	float distancia = 0;
-	if (valor < 0)
-		dir = u;
-	else if (valor > longitud)
-		dir = (punto - limite2);
-	else
-		dir = u - v * valor;
-	distancia = dir.modulo();
-	if (direccion != 0) //si nos dan un vector…
-		*direccion = dir.unitario();
-	return distancia;
-}*/
