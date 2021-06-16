@@ -15,7 +15,7 @@ public:
 	void anadeScore(int, int[MAX_PUNTUACIONES]);
 protected:
 	Mundo mundo;
-	enum Estado { INICIO,CINEMATICA, JUEGO, GAMEOVER, FIN, PAUSA, SCORE};
+	enum Estado { INICIO,CINEMATICA1, CINEMATICA2, CINEMATICA3, JUEGO, GAMEOVER, FIN, PAUSA, SCORE};
 	Estado estado;
 	int puntuaciones[MAX_PUNTUACIONES];
 	//ofstream fout;

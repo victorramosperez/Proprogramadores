@@ -355,7 +355,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	setNivel(3);
+	setNivel(0);
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 35;
@@ -364,7 +364,6 @@ void Mundo::inicializa()
 	hombre.setVida(1);
 	hombre.setDispEspecial(false);
 	puntos = 0;
-	ETSIDI::playMusica("sonidos/musicafondo.wav", true);
 }
 
 Mundo::~Mundo()

@@ -19,7 +19,6 @@ Coordinador::Coordinador()
 		int num = 0;
 		while (fin >> puntuaciones[num])
 		{
-			//fin >> puntuaciones[num];
 			num++;
 		}
 	}
@@ -54,14 +53,32 @@ void Coordinador::tecla(unsigned char key)
 	{
 		if (key == 'e' || key=='E')
 		{
+			ETSIDI::playMusica("sonidos/musicafondo.wav", true);
+			estado = CINEMATICA1;
+		}
+
+		if (key == 's' || key == 'S')
+			exit(0);
+	}
+	else if (estado == CINEMATICA1)
+	{
+		if (key == 'c' || key == 'C')
+			estado = CINEMATICA2;
+	}
+	else if (estado == CINEMATICA2)
+	{
+		if (key == 'c' || key == 'C')
+			estado = CINEMATICA3;
+	}
+	else if (estado == CINEMATICA3)
+	{
+		if (key == 'c' || key == 'C')
+		{
 			mundo.nivel = 0;
 			mundo.inicializa();
 			mundo.cargarNivel();
 			estado = JUEGO;
 		}
-
-		if (key == 's' || key == 'S')
-			exit(0);
 	}
 	else if (estado == JUEGO)
 	{
@@ -145,6 +162,67 @@ void Coordinador::dibuja()
 		ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", -7, 3);
 		ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", -7, 2);
 		ETSIDI::printxy("Proprogramadores", 2, 0);
+	}
+	else if (estado == CINEMATICA1)
+	{
+		gluLookAt(0, 7.5, 30, // posicion del ojo
+			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+
+		//dibujo del fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/cinematica1.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3d(-10, 0, 5);
+		glTexCoord2d(1, 1); glVertex3d(10, 0, 5);
+		glTexCoord2d(1, 0); glVertex3d(10, 15, 5);
+		glTexCoord2d(0, 0); glVertex3d(-10, 15, 5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		ETSIDI::printxy("Pulsa -C- para continuar", -4, 0);
+	}
+	else if (estado == CINEMATICA2)
+	{
+		gluLookAt(0, 7.5, 30, // posicion del ojo
+			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+
+		//dibujo del fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/cinematica2.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3d(-10, 0, 5);
+		glTexCoord2d(1, 1); glVertex3d(10, 0, 5);
+		glTexCoord2d(1, 0); glVertex3d(10, 15, 5);
+		glTexCoord2d(0, 0); glVertex3d(-10, 15, 5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+	}
+	else if (estado == CINEMATICA3)
+	{
+		gluLookAt(0, 7.5, 30, // posicion del ojo
+			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+
+		//dibujo del fondo
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/cinematica3.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1); glVertex3d(-10, 0, 5);
+		glTexCoord2d(1, 1); glVertex3d(10, 0, 5);
+		glTexCoord2d(1, 0); glVertex3d(10, 15, 5);
+		glTexCoord2d(0, 0); glVertex3d(-10, 15, 5);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 	}
 	else if (estado == JUEGO)
 	{
